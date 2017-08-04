@@ -5,7 +5,7 @@ use feature qw(say);
 
 #Check root
 die "This scripr must be run as root" if($<!=0);
-
+if(0){
 #Download Matlab.
 my $file="matlab_R2017a_glnxa64.zip";
 say "matlab downloading...";
@@ -15,10 +15,9 @@ system "chmod 755 -R MATLAB";
 
 #Install.
 system "./MATLAB/install";
-
+}
 #die if install failed.
-die "MATLAB R2017a is not installed" unless(-e "/usr/local/MATLAB/R2017a/bin/
-matlab");
+die "MATLAB R2017a is not installed" unless(-e "/usr/local/MATLAB/R2017a/bin/matlab");
 
 #Remove all install files.
 system "rm -r MATLAB";
