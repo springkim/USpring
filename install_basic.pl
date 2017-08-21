@@ -28,7 +28,7 @@ $cmd="git config --global user.email \"$github_email\"";
 say $cmd;
 system $cmd;
 
-$cmd="add-apt-repository ppa:numix/ppa -y && add-apt-repository ppa:noobslab/themes -y && apt-get update && sudo apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-theme -y && apt-get install royal-gtk-theme && apt-get install unity-tweak-tool && apt-get install tweak && apt-get install exfat-fuse exfat-utils";
+$cmd="add-apt-repository ppa:snwh/pulp -y && add-apt-repository ppa:numix/ppa -y && add-apt-repository ppa:noobslab/themes -y && apt-get update && sudo apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-theme -y && apt-get install royal-gtk-theme && apt-get install unity-tweak-tool && apt-get install tweak && apt-get install exfat-fuse exfat-utils && apt-get install paper-gtk-theme paper-icon-theme -y";
 print $cmd;
 system $cmd;
 
