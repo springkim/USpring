@@ -18,7 +18,7 @@ my $cmd;
 $cmd='apt-get update && sudo apt-get upgrade -y';
 say $cmd;
 system $cmd;
-$cmd='apt-get install gcc g++ fpc python3 vim git -y';
+$cmd='apt-get install gcc g++ fpc python3 vim git inkscape -y';
 say $cmd;
 system $cmd;
 $cmd="git config --global user.name \"$github_name\"";
