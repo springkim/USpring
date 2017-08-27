@@ -49,8 +49,6 @@ open FP,">","/etc/apache2/sites-enabled/000-default.conf" or die "$!\n";
 print FP $doc;
 close FP;
 
-die;
-
 my $doc2=do{
     local $/=undef;
     open FP,"<","/etc/apache2/apache2.conf" or die "$!\n";
