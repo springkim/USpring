@@ -28,8 +28,13 @@ $cmd="git config --global user.email \"$github_email\"";
 say $cmd;
 system $cmd;
 
-$cmd="add-apt-repository ppa:snwh/pulp -y && add-apt-repository ppa:numix/ppa -y && add-apt-repository ppa:noobslab/themes -y && apt-get update && sudo apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-theme -y && apt-get install royal-gtk-theme && apt-get install unity-tweak-tool && apt-get install tweak && apt-get install exfat-fuse exfat-utils && apt-get install paper-gtk-theme paper-icon-theme -y";
-print $cmd;
-system $cmd;
+#install theme
+system "add-apt-repository ppa:snwh/pulp -y";
+system "add-apt-repository ppa:numix/ppa -y";
+system "add-apt-repository ppa:noobslab/themes -y";
+system "apt-get update";
+system "apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-theme royal-gtk-theme unity-tweak-tool tweak paper-gtk-theme -y";
+system "apt-get install exfat-fuse exfau-utils -y";
 
+#install perl libries
 system "cpan install Net::Address::IP::Local";
