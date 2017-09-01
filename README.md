@@ -3,7 +3,7 @@
 ###### ubuntu16.04 startup project
 
 This script needs root permission.
-###Home
+### Home
 ##### 1.install_basic.pl
 
 ```
@@ -16,14 +16,13 @@ git
 inkscape
 ```
 
-##### 2.install_chrome.pl
-
+##### 2.install_chrome.pl ~~(use firefox)~~
 ```
 chrome
 ```
 
 ##### 3.install_gpu.pl
-
+![](http://imgur.com/YoynYu8.png)
 Only support NVIDIA GPU.
 
 ##### 4.install_cuda.pl
@@ -41,13 +40,15 @@ Only support NVIDIA GPU.
 ##### 10.install_java.pl
 ![](https://i.imgur.com/h1mfnNS.png)
 * * *
-###Extension
+### Extension
 ##### extension/install_apache2_cgi.pl
 
 ##### extension/install_remote_desktop.pl
 
 ##### extension/install_conky.pl
 
-###Screenshot
+* * *
+
+### Screenshot
 
 ##### screenshot/install_imgur_screen_shot.pl
