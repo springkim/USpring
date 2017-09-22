@@ -13,7 +13,7 @@ die "This scripr must be run as root" if($<!=0);
 
 
 
-system "wget https://www.dropbox.com/s/fokj1yy7q0ff8ej/nana%201.5.5.zip?dl=1 -o nana1.5.5.zip";
+system "wget https://www.dropbox.com/s/fokj1yy7q0ff8ej/nana%201.5.5.zip?dl=1 -O nana1.5.5.zip";
 system "unzip nana1.5.5.zip";
 chdir "nana";
 mkdir "ubuntu";
