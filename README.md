@@ -1,54 +1,40 @@
 ## USpring
-
-###### ubuntu16.04 startup project
+#### ubuntu16.04 startup project
 
 This script needs root permission.
-### Home
-##### 1.install_basic.pl
+Run as follows...
+```bash
+sudo perl install_***.pl
+```
+### Modules
+##### <img src="https://i.imgur.com/8Iyqowq.png" width="48"> install_basic.pl
+`gcc`,`g++`,`fpc`,`python3`,`vim`,`git`,`inkscape`
 
-```
-gcc
-g++
-fpc
-python3
-vim
-git
-inkscape
-```
 
-##### 2.install_chrome.pl ~~(use firefox)~~
-```
-chrome
-```
-
-##### 3.install_gpu.pl
-![](http://imgur.com/YoynYu8.png)
+##### <img src="https://i.imgur.com/7FbWX38.png" width="48"> install_gpu.pl
 Only support NVIDIA GPU.
+##### <img src="https://i.imgur.com/PGvI1Eu.png" width="48"> install_cuda.pl
+##### <img src="https://i.imgur.com/7FbWX38.png" width="48"> install_cudnn.pl
+##### <img src="https://i.imgur.com/Gvv4hNZ.png" width="48"> install_teamviewer.pl
+##### <img src="https://i.imgur.com/lrUBP9k.png" width="48"> install_haroopad.pl
+##### <img src="https://i.imgur.com/ArRiixC.jpg" width="48"> install_matlab.pl
+##### <img src="https://i.imgur.com/gocRJMY.png" width="48"> install_bomi.pl
+##### <img src="https://i.imgur.com/h1mfnNS.png" width="48"> install_java.pl
+##### <img src="https://i.imgur.com/jEZTseJ.png" width="48"> install_apache2_cgi.pl
+##### <img src="https://i.imgur.com/j2JVXi9.png" width="48"> install_opencv.pl
+opencv 3.3.0 world build
+example compile command line
+```bash
+g++ main.cpp -lopencv_world
+```
 
-##### 4.install_cuda.pl
-![](https://i.imgur.com/PGvI1Eu.png)
-##### 5.install_cudnn.pl
-![](https://i.imgur.com/LMYEdoZ.png)
-##### 6.install_teamviewer.pl
-![](https://i.imgur.com/Gvv4hNZ.png)
-##### 7.install_haroopad.pl
-![](https://i.imgur.com/lrUBP9k.png)
-##### 8.install_matlab.pl
-![](https://i.imgur.com/Kg7dkLa.png)
-##### 9.install_bomi.pl
-![](https://i.imgur.com/gocRJMY.png)
-##### 10.install_java.pl
-![](https://i.imgur.com/h1mfnNS.png)
-* * *
-### Extension
-##### extension/install_apache2_cgi.pl
 
-##### extension/install_remote_desktop.pl
 
-##### extension/install_conky.pl
 
-* * *
+### dev
 
-### Screenshot
+##### <img src="https://i.imgur.com/Pout5Vk.png" width="48"> install_imgur_screen_shot.pl
 
-##### screenshot/install_imgur_screen_shot.pl
+### deprecated
+##### <img src="https://i.imgur.com/y5Qtrvk.png" width="48"> install_chrome.pl
+~~(use firefox)~~
