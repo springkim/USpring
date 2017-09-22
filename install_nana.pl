@@ -21,7 +21,7 @@ system "cmake . -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=ubuntu";
 system "make";
 system "make install";
 
-system "cp -r ubuntu/install/nana /usr/include/";
+system "cp -r ubuntu/include/nana /usr/include/";
 system "cp ubuntu/lib/* /usr/lib/";
 system "rm -r nana";
 system "rm nana1.5.5.zip";
