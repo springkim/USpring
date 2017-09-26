@@ -11,7 +11,7 @@ sudo perl install_***.pl
 `gcc`,`g++`,`fpc`,`python3`,`vim`,`git`,`inkscape`
 
 
-##### <img src="https://i.imgur.com/7FbWX38.png" width="48"> install_gpu.pl
+##### <img src="https://i.imgur.com/0DvylcN.png" width="48"> install_gpu.pl
 Only support NVIDIA GPU.
 ##### <img src="https://i.imgur.com/PGvI1Eu.png" width="48"> install_cuda.pl
 ##### <img src="https://i.imgur.com/7FbWX38.png" width="48"> install_cudnn.pl
@@ -27,14 +27,25 @@ example compile command line
 ```bash
 g++ main.cpp -lopencv_world
 ```
-
+##### <img src="https://i.imgur.com/Pout5Vk.png" width="48"> install_imgur_screen_shot.pl (not root)
+```
+Capture window and upload : Ctrl+Shift+W
+Capture region and upload : Ctrl+Shift+R
+```
+##### <img src="https://i.imgur.com/NMzEIIc.png" width="48"> install_clion.pl (not root)
+Install directory is `~/Program/`
 
 
 
 ### dev
-
-##### <img src="https://i.imgur.com/Pout5Vk.png" width="48"> install_imgur_screen_shot.pl
+```
+Nothing...
+```
 
 ### deprecated
 ##### <img src="https://i.imgur.com/y5Qtrvk.png" width="48"> install_chrome.pl
 ~~(use firefox)~~
+
+### TODO
+- [ ] Caffe
+- [ ] PyCharm
