@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use feature qw(say);
 #Check root
-die "This scripr must be run as root" if($<!=0);
+die "This script must be run as root" if($<!=0);
 #Check GPU model
 #my $gpu=(`lspci | grep -i VGA`=~/(\[.+\])/)[0];
 #say $gpu;

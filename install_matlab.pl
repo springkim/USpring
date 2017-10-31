@@ -4,7 +4,7 @@ use warnings;
 use feature qw(say);
 
 #Check root
-die "This scripr must be run as root" if($<!=0);
+die "This script must be run as root" if($<!=0);
 
 #Download Matlab.
 my $file="matlab_R2017a_glnxa64.zip";

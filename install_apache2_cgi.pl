@@ -11,7 +11,7 @@ use warnings;
 use feature qw(say);
 use Net::Address::IP::Local;
 #Check root
-die "This scripr must be run as root" if($<!=0);
+die "This script must be run as root" if($<!=0);
 
 print "root dir : ";
 my $root_dir=<STDIN>;

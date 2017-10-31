@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use feature qw(say);
 #Check root
-die "This scripr must be run as root" if($<!=0);
+die "This script must be run as root" if($<!=0);
 
 system "wget https://www.dropbox.com/s/ovyi5wqb3g3efc9/cudnn-8.0-linux-x64-v5.1.tgz?dl=0 -O cudnn.tgz";
 

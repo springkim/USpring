@@ -10,7 +10,7 @@ use warnings;
 use feature qw(say);
 
 #Check root
-die "This scripr must be run as root" if($<!=0);
+die "This script must be run as root" if($<!=0);
 
 system "apt-get install openjdk-9-jdk -y";
 system "dpkg --configure -a";

@@ -4,7 +4,7 @@ use warnings;
 use feature qw(say);
 
 #Check root
-die "This scripr must be run as root" if($<!=0);
+die "This script must be run as root" if($<!=0);
 
 say "haroopad downloading...";
 system "wget https://www.dropbox.com/s/ck3dccag6xdx3vx/haroopad-v0.13.1-x64.deb?dl=0 -O haroopad.deb";
