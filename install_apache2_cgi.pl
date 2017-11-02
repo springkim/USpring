@@ -11,17 +11,37 @@ use warnings;
 use feature qw(say);
 use Net::Address::IP::Local;
 #Check root
-die "This script must be run as root" if($<!=0);
+die "Please run as not superuser" if($<==0);
 
+
+my $ip_address=Net::Address::IP::Local->public_ipv4;
+
+system "sudo apt-get install apache2 -y";
+
+my $data=do{
+    local $/=undef;
+    <DATA>;
+};
+my $tmpfile="install_apache2_cgi.tmp.pl";
+open FP,">",$tmpfile;
+print FP $data;
+close FP;
+system "sudo perl $tmpfile";
+unlink $tmpfile;
+print "
+===============================================================
+모든 설치가 끝났습니다.
+마지막으로 콘솔창에서 아래의 명령어로 apache2 를 재시작 하십시오.
+service apache2 restart
+================================================================
+";
+__DATA__
 print "root dir : ";
 my $root_dir=<STDIN>;
 chomp($root_dir);
 print "email : ";
 my $email=<STDIN>;
 chomp($email);
-my $ip_address=Net::Address::IP::Local->public_ipv4;
-
-system "apt-get install apache2 -y";
 my $doc=do{  
     local $/=undef;
     open FP,"<","/etc/apache2/sites-enabled/000-default.conf" or die "$!\n";
@@ -54,7 +74,7 @@ my $doc2=do{
     open FP,"<","/etc/apache2/apache2.conf" or die "$!\n";
     <FP>;
 };
-say $doc2;
+#say $doc2;
 $doc2=~s/#ServerRoot/ServerRoot/;
 
 
@@ -77,10 +97,3 @@ close FP;
 system "a2enmod cgi";
 #system "service apache2 restart";
 system "apt-get install libcgi-session-perl -y";
-print "
-===============================================================
-모든 설치가 끝났습니다.
-마지막으로 콘솔창에서 아래의 명령어로 apache2 를 재시작 하십시오.
-service apache2 restart
-================================================================
-";

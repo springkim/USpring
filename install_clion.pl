@@ -10,7 +10,7 @@ use warnings;
 use feature qw(say);
 
 #Check root
-die "Run as user" if($<==0);
+die "Please run as not superuser" if($<==0);
 
 
 system "wget https://www.dropbox.com/s/1t7rr68nd4zn0dq/CLion-2017.2.2.tar.gz?dl=1 -O CLion-2017.2.2.tar.gz";

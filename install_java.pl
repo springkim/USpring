@@ -10,10 +10,11 @@ use warnings;
 use feature qw(say);
 
 #Check root
-die "This script must be run as root" if($<!=0);
+die "Please run as not superuser" if($<==0);
+system "sudo ls";
 
-system "apt-get install openjdk-9-jdk -y";
-system "dpkg --configure -a";
-system 'dpkg -i --force-overwrite \'/var/cache/apt/archives/openjdk-9-jdk_9~b114-0ubuntu1_amd64.deb\'';
+system "sudo apt-get install openjdk-9-jdk -y";
+system "sudo dpkg --configure -a";
+system 'sudo dpkg -i --force-overwrite \'/var/cache/apt/archives/openjdk-9-jdk_9~b114-0ubuntu1_amd64.deb\'';
 
-system "apt-get install openjdk-9-jdk -y";
+system "sudo apt-get install openjdk-9-jdk -y";

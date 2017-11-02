@@ -10,8 +10,9 @@ use warnings;
 use feature qw(say);
 #https://askubuntu.com/questions/573535/setting-special-keys-as-keyboard-shortcuts
 #https://askubuntu.com/questions/527990/add-a-custom-keybinding-with-gsettings-in-ubuntu/638900
-#Run as user.
-die "Please Run as user(not sudo)" if($<==0);
+#Check root
+die "Please run as not superuser" if($<==0);
+
 my $key=`gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | sed s/]/,/`;
 if(length($key)==7){
 	$key='[';

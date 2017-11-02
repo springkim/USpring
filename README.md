@@ -1,11 +1,11 @@
 ## USpring
-#### ubuntu16.04 startup project
+#### ubuntu16.04 setup project
 
-This script needs root permission.
-Run as follows...
+Do not run as root(sudo). Run as below.
 ```bash
-sudo perl install_***.pl
+perl install_*.pl
 ```
+You have to run **install_basic.pl** first.
 ### Modules
 ##### <img src="https://i.imgur.com/8Iyqowq.png" width="48"> install_basic.pl
 `gcc`,`g++`,`fpc`,`python3`,`vim`,`git`,`inkscape`
@@ -34,6 +34,10 @@ Capture region and upload : Ctrl+Shift+R
 ```
 ##### <img src="https://i.imgur.com/NMzEIIc.png" width="48"> install_clion.pl (not root)
 Install directory is `~/Program/`
+##### <img src="https://imgur.com/uWy0W7k.png" width="48"> install_caffe.pl (not root)
+This caffe based on [https://github.com/BVLC/caffe](https://github.com/BVLC/caffe).
+This is [hello_caffe.cpp](https://gist.github.com/springkim/f67ae91b89a269648ab666574dca989f). You can check caffe library as this file.
+or run **python** and `import caffe`.
 
 
 
@@ -47,5 +51,5 @@ Nothing...
 ~~(use firefox)~~
 
 ### TODO
-- [ ] Caffe
+- [x] caffe
 - [ ] PyCharm

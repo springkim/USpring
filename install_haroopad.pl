@@ -4,7 +4,8 @@ use warnings;
 use feature qw(say);
 
 #Check root
-die "This script must be run as root" if($<!=0);
+die "Please run as not superuser" if($<==0);
+system "sudo ls";
 
 say "haroopad downloading...";
 system "wget https://www.dropbox.com/s/ck3dccag6xdx3vx/haroopad-v0.13.1-x64.deb?dl=0 -O haroopad.deb";

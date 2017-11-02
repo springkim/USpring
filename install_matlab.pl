@@ -4,7 +4,22 @@ use warnings;
 use feature qw(say);
 
 #Check root
-die "This script must be run as root" if($<!=0);
+die "Please run as not superuser" if($<==0);
+
+my $data=do{
+    local $/=undef;
+    <DATA>;
+};
+my $tmpfile="install_matlab.tmp.pl";
+open FP,">",$tmpfile;
+print FP $data;
+close FP;
+system "sudo perl $tmpfile";
+unlink $tmpfile;
+
+
+
+__DATA__
 
 #Download Matlab.
 my $file="matlab_R2017a_glnxa64.zip";

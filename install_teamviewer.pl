@@ -4,7 +4,8 @@ use warnings;
 use feature qw(say);
 
 #Check root
-die "This script must be run as root" if($<!=0);
+die "Please run as not superuser" if($<==0);
+system "sudo ls";
 
 say "teamviewer downloading...";
 system "wget https://www.dropbox.com/s/qpmj7t8fibkkguq/teamviewer_12.0.76279_i386.deb?dl=0 -O teamviewer_i386.deb";

@@ -9,7 +9,8 @@ use strict;
 use warnings;
 use feature qw(say);
 #Check root
-die "This script must be run as root" if($<!=0);
+die "Please run as not superuser" if($<==0);
+system "sudo ls";
 
 
 
@@ -21,7 +22,7 @@ system "cmake . -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=ubuntu";
 system "make";
 system "make install";
 
-system "cp -r ubuntu/include/nana /usr/include/";
-system "cp ubuntu/lib/* /usr/lib/";
-system "rm -r nana";
-system "rm nana1.5.5.zip";
+system "sudo cp -r ubuntu/include/nana /usr/include/";
+system "sudo cp ubuntu/lib/* /usr/lib/";
+system "sudo rm -r nana";
+system "sudo rm nana1.5.5.zip";
