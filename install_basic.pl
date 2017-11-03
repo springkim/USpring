@@ -33,7 +33,7 @@ system "sudo add-apt-repository ppa:noobslab/themes -y";
 system "sudo apt-get update";
 system "sudo apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-theme royal-gtk-theme unity-tweak-tool tweak paper-gtk-theme -y";
 #install exfat
-system "sudo apt-get install exfat-fuse exfau-utils -y";
+system "sudo apt-get install exfat-fuse exfat-utils -y";
 
 #install perl libries
 system "cpan install Net::Address::IP::Local";
