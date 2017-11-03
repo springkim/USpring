@@ -23,7 +23,7 @@ system "sudo apt-get install build-essential cmake pkg-config libjpeg-dev libtif
 
 system "mkdir build";
 chdir("build");
-system "cmake ../opencv-3.3.0 -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=build -DWITH_TBB=ON -DBUILD_opencv_world=OFF";
+system "cmake ../opencv-3.3.0 -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=build -DWITH_TBB=ON -DBUILD_opencv_world=ON";
 # make -j? is build with ? cpu cores.
 system "make -j`cat /proc/cpuinfo | grep cores | wc -l`";
 system "make install";

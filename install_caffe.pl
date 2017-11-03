@@ -11,6 +11,7 @@ use feature qw(say);
 #Check root
 die "Please run as not superuser" if($<==0);
 
+system "sudo -H pip install --upgrade pip";
 #Prepare to caffe
 system "sudo apt-get install -y build-essential cmake git pkg-config libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev";
 system "sudo apt-get install -y --no-install-recommends libboost-all-dev";
@@ -23,13 +24,17 @@ system "sudo apt-get install -y python-numpy python-scipy";
 #download caffe
 system "wget https://www.dropbox.com/s/zxmk0cz9o53y2as/caffe.zip?dl=1 -O caffe.zip";
 system "unzip caffe.zip";
+
 #make caffe
 chdir "caffe";
+chdir "python";
+system "perl install_python_requirements.pl";
+chdir "..";
 system 'make all -j $(($(nproc) + 1))';
 system "make test && make runtest";
 system "make pycaffe && make distribute";
 chdir "..";
-
+die;
 #Install caffe for C/C++
 system "sudo cp -r caffe/distribute/include/caffe /usr/include/";
 system "sudo cp caffe/distribute/lib/* /usr/lib/";

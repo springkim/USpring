@@ -22,7 +22,7 @@ chomp($github_email);
 
 system "sudo apt-get update && sudo apt-get upgrade -y";
 
-system 'sudo apt-get install gcc g++ fpc python3 vim git inkscape -y';
+system 'sudo apt-get install gcc g++ fpc python3 vim git inkscape cmake -y';
 system "git config --global user.name \"$github_name\"";
 system "git config --global user.email \"$github_email\"";
 
@@ -34,6 +34,8 @@ system "sudo apt-get update";
 system "sudo apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-theme royal-gtk-theme unity-tweak-tool tweak paper-gtk-theme -y";
 #install exfat
 system "sudo apt-get install exfat-fuse exfat-utils -y";
+
+system "sudo echo enabled=0 | sudo tee /etc/default/apport";
 
 #install perl libries
 system "cpan install Net::Address::IP::Local";

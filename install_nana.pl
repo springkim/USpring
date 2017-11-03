@@ -24,5 +24,6 @@ system "make install";
 
 system "sudo cp -r ubuntu/include/nana /usr/include/";
 system "sudo cp ubuntu/lib/* /usr/lib/";
+chdir "..";
 system "sudo rm -r nana";
 system "sudo rm nana1.5.5.zip";
