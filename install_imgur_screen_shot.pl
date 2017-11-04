@@ -12,6 +12,8 @@ use feature qw(say);
 #https://askubuntu.com/questions/527990/add-a-custom-keybinding-with-gsettings-in-ubuntu/638900
 #Check root
 die "Please run as not superuser" if($<==0);
+system "sudo apt-get install xclip -y";
+
 
 my $key=`gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | sed s/]/,/`;
 if(length($key)==7){
@@ -35,8 +37,9 @@ system "gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybin
 
 system "sudo wget https://www.dropbox.com/s/v1zzjb6snjgvs9f/imgur-screenshot.sh?dl=1 -O /usr/bin/imgur-screenshot.sh";
 system "sudo wget https://www.dropbox.com/s/81sj0cye7d57akn/imgur-screenshot-w.sh?dl=1 -O /usr/bin/imgur-screenshot-w.sh";
-
-
+system "sudo chmod +x /usr/bin/imgur-screenshot.sh";
+system "sudo chmod +x /usr/bin/imgur-screenshot-w.sh";
+system "mkdir ~/Pictures";
 say "========================================";
 say "Capture Window and upload : Ctrl + SHift + W";
 say "Capture Region and upload : Ctrl + SHift + R";
