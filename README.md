@@ -22,6 +22,7 @@ Only support NVIDIA GPU.
 ##### <img src="https://i.imgur.com/h1mfnNS.png" width="48"> install_java.pl
 ##### <img src="https://i.imgur.com/jEZTseJ.png" width="48"> install_apache2_cgi.pl
 ##### <img src="https://i.imgur.com/j2JVXi9.png" width="48"> install_opencv.pl
+##### <img src="https://i.imgur.com/j2JVXi9.png" width="48"> install_opencv_world.pl
 opencv 3.3.0 world build
 example compile command line
 ```bash
@@ -38,7 +39,7 @@ Install directory is `~/Program/`
 This caffe based on [https://github.com/BVLC/caffe](https://github.com/BVLC/caffe).
 This is [hello_caffe.cpp](https://gist.github.com/springkim/f67ae91b89a269648ab666574dca989f). You can check caffe library as this file.
 or run **python** and `import caffe`.
-
+An you have to run **install_opencv.pl** first.
 
 
 ### dev
