@@ -15,7 +15,9 @@ die "Please run as not superuser" if($<==0);
 
 system "wget https://www.dropbox.com/s/40hwntlbg6uk1xs/pycharm-community-2017.2.4.tar.gz?dl=1 -O pycharm-community-2017.2.4.tar.gz";
 system "tar xzvf pycharm-community-2017.2.4.tar.gz";
-system "mkdir ~/Program";
+
+system "mkdir ~/Program" unless(-d "~/Program");
+
 system "mv pycharm-community-2017.2.4 ~/Program/";
 system "rm pycharm-community-2017.2.4.tar.gz";
 
