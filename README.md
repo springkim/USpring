@@ -33,9 +33,11 @@ g++ main.cpp -lopencv_world
 Capture window and upload : Ctrl+Shift+W
 Capture region and upload : Ctrl+Shift+R
 ```
-##### <img src="https://i.imgur.com/NMzEIIc.png" width="48"> install_clion.pl (not root)
+##### <img src="https://i.imgur.com/NMzEIIc.png" width="48"> install_clion.pl
 Install directory is `~/Program/`
-##### <img src="https://imgur.com/uWy0W7k.png" width="48"> install_caffe.pl (not root)
+##### <img src="https://i.imgur.com/tigNRKG.png" width="48"> install_pycharm.pl
+Install directory is `~/Program/`
+##### <img src="https://imgur.com/uWy0W7k.png" width="48"> install_caffe.pl
 This caffe based on [https://github.com/BVLC/caffe](https://github.com/BVLC/caffe).
 This is [hello_caffe.cpp](https://gist.github.com/springkim/f67ae91b89a269648ab666574dca989f). You can check caffe library as this file.
 or run **python** and `import caffe`.
@@ -44,7 +46,7 @@ An you have to run **install_opencv.pl** first.
 
 ### dev
 ```
-Nothing...
+Change directory name for eng.
 ```
 
 ### deprecated
@@ -53,4 +55,4 @@ Nothing...
 
 ### TODO
 - [x] caffe
-- [ ] PyCharm
+- [x] PyCharm
