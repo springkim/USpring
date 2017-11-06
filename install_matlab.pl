@@ -20,7 +20,7 @@ unlink $tmpfile;
 
 
 __DATA__
-
+use feature qw(say);
 #Download Matlab.
 my $file="matlab_R2017a_glnxa64.zip";
 say "matlab downloading...";
