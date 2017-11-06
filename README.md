@@ -16,9 +16,9 @@ Only support NVIDIA GPU.
 ##### <img src="https://i.imgur.com/PGvI1Eu.png" width="48"> install_cuda.pl
 ##### <img src="https://i.imgur.com/7FbWX38.png" width="48"> install_cudnn.pl
 ##### <img src="https://i.imgur.com/Gvv4hNZ.png" width="48"> install_teamviewer.pl
-##### <img src="https://i.imgur.com/lrUBP9k.png" width="48"> install_haroopad.pl
+##### <img src="https://i.imgur.com/lrUBP9k.png" width="48"> install_haroopad.pl `Markdown editor`
 ##### <img src="https://i.imgur.com/ArRiixC.jpg" width="48"> install_matlab.pl
-##### <img src="https://i.imgur.com/gocRJMY.png" width="48"> install_bomi.pl
+##### <img src="https://i.imgur.com/gocRJMY.png" width="48"> install_bomi.pl `Video player`
 ##### <img src="https://i.imgur.com/h1mfnNS.png" width="48"> install_java.pl
 ##### <img src="https://i.imgur.com/jEZTseJ.png" width="48"> install_apache2_cgi.pl
 ##### <img src="https://i.imgur.com/j2JVXi9.png" width="48"> install_opencv.pl
@@ -43,6 +43,8 @@ This is [hello_caffe.cpp](https://gist.github.com/springkim/f67ae91b89a269648ab6
 or run **python** and `import caffe`.
 And you have to run **install_opencv.pl** first.
 
+##### <img src="https://i.imgur.com/XZjnG46.png" width="48"> install_neofetch.pl `System information`
+Original source is [here](https://github.com/dylanaraps/neofetch)
 
 ### dev
 ```
