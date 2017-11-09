@@ -28,9 +28,27 @@ system "cmake ../opencv-3.3.0 -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=
 system "make -j`cat /proc/cpuinfo | grep cores | wc -l`";
 system "make install";
 chdir("build");
+#for c++(usually it will be using other library)
 system "sudo cp -r include/opencv /usr/include/";
 system "sudo cp -r include/opencv2 /usr/include/";
 system "sudo cp lib/lib* /usr/lib/";
+#for python2.7
+system "sudo cp lib/python2.7/dist-packages/* /usr/local/lib/python2.7/dist-packages/";
+#for python3.5
+system "sudo cp lib/python3.5/dist-packages/* /usr/local/lib/python3.5/dist-packages/";
+chdir("..");
+################
+# opencv world #
+################
+system "cmake ../opencv-3.3.0 -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=build -DWITH_TBB=ON -DBUILD_opencv_world=ON";
+# make -j? is build with ? cpu cores.
+system "make -j`cat /proc/cpuinfo | grep cores | wc -l`";
+system "make install";
+#for c++ programming
+system "sudo cp -r include/opencv /usr/include/";
+system "sudo cp -r include/opencv2 /usr/include/";
+system "sudo cp lib/lib* /usr/lib/";
+
 chdir("../../../");
 system "sudo rm -r opencv";
 

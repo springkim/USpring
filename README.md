@@ -22,8 +22,8 @@ Only support NVIDIA GPU.
 ##### <img src="https://i.imgur.com/h1mfnNS.png" width="48"> install_java.pl
 ##### <img src="https://i.imgur.com/jEZTseJ.png" width="48"> install_apache2_cgi.pl
 ##### <img src="https://i.imgur.com/j2JVXi9.png" width="48"> install_opencv.pl
-##### <img src="https://i.imgur.com/j2JVXi9.png" width="48"> install_opencv_world.pl
-opencv 3.3.0 world build
+
+opencv 3.3.0 world build , basic build for c++,python2.7 and python3.5
 example compile command line
 ```bash
 g++ main.cpp -lopencv_world
