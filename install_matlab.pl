@@ -47,10 +47,10 @@ my $file_object=<<EOF
 [Desktop Entry]
 Type=Application
 GenericName=MatlabR2017a
-Name=Matlab -desktop
+Name=Matlab
 Comment=Matlab Development Environment
 Icon=/opt/matlab.png
-Exec=matlab
+Exec=matlab -desktop
 Terminal=true;
 Categories=Development;IDE;Matlab;
 EOF

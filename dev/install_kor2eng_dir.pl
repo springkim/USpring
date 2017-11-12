@@ -10,7 +10,7 @@ use warnings;
 use feature qw(say);
 #Check root
 die "Please run as not superuser" if($<==0);
-chdir "~";
+#chdir "~";
 if(-d "다운로드"){
 	unless(-d "Downloads"){
 		system "mv 다운로드 Downloads";
