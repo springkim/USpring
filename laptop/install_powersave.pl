@@ -13,5 +13,5 @@ use feature qw(say);
 die "Please run as not superuser" if($<==0);
 
 system "wget -O .laptop-mode.sh http://drive.noobslab.com/data/improve-battery/laptop-mode";
-system "chmod +x .laptop-mode.sh && ./.laptop-mode.sh"
+system "chmod +x .laptop-mode.sh && ./.laptop-mode.sh";
 unlink ".laptop-mode.sh";

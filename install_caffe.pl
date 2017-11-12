@@ -34,15 +34,16 @@ system 'make all -j $(($(nproc) + 1))';
 system "make test && make runtest";
 system "make pycaffe && make distribute";
 chdir "..";
-die;
+
 #Install caffe for C/C++
 system "sudo cp -r caffe/distribute/include/caffe /usr/include/";
 system "sudo cp caffe/distribute/lib/* /usr/lib/";
 #Install caffe for python 2.7
-system "sudo mkdir /usr/local/lib/python2.7/site-packages/";
+
+system "sudo mkdir /usr/local/lib/python2.7/site-packages/" unless(-d '/usr/local/lib/python2.7/site-packages/');
 system "sudo cp -r caffe/distribute/python/caffe /usr/local/lib/python2.7/dist-packages/";
 #Install caffe for python 3.5
-system "sudo mkdir /usr/local/lib/python3.5/site-packages/";
+system "sudo mkdir /usr/local/lib/python3.5/site-packages/" unless(-d '/usr/local/lib/python3.5/site-packages/');
 system "sudo cp -r caffe/distribute/python/caffe /usr/local/lib/python3.5/dist-packages/";
 
 #Remove installation file
