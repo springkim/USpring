@@ -44,6 +44,7 @@ system "cmake ../opencv-3.3.0 -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=
 # make -j? is build with ? cpu cores.
 system "make -j`cat /proc/cpuinfo | grep cores | wc -l`";
 system "make install";
+chdir("build");
 #for c++ programming
 system "sudo cp -r include/opencv /usr/include/";
 system "sudo cp -r include/opencv2 /usr/include/";
