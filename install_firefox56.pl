@@ -45,7 +45,7 @@ Type=Application
 GenericName=firefox56
 Name=firefox
 Comment=Internet
-Icon=/opt/Firefox.png
+Icon=/opt/firefox.png
 Exec=firefox
 Terminal=true;
 Categories=Internet;
@@ -53,6 +53,6 @@ EOF
 ;
 print FP $data;
 close FP;
-system "wget https://www.dropbox.com/s/1uu2ssef3xfwsoh/Firefox.png?dl=0 -O /opt/Firefox.png";
+system "wget https://www.dropbox.com/s/1uu2ssef3xfwsoh/Firefox.png?dl=0 -O /opt/firefox.png";
 
 
