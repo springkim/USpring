@@ -9,7 +9,7 @@ You have to run **install_basic.pl** first.
 ### Modules
 ##### <img src="https://i.imgur.com/8Iyqowq.png" width="48"> install_basic.pl
 `gcc`,`g++`,`fpc`,`python3`,`vim`,`git`,`inkscape`
-
+##### <img src="https://imgur.com/oSC7Gvl.png" width="48"> install_firefox56.pl
 
 ##### <img src="https://i.imgur.com/0DvylcN.png" width="48"> install_gpu.pl
 Only support NVIDIA GPU.
@@ -28,6 +28,7 @@ example compile command line
 ```bash
 g++ main.cpp -lopencv_world
 ```
+##### <img src="https://i.imgur.com/j2JVXi9.png" width="48"> install_opencv_contrib.pl
 ##### <img src="https://i.imgur.com/Pout5Vk.png" width="48"> install_imgur_screen_shot.pl (not root)
 ```
 Capture window and upload : Ctrl+Shift+W
