@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-#  install_wx.pl
+#  install_nana.pl
 #  USpring
 #
 #  Created by kimbom on 2017. 9. 22...
