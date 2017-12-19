@@ -12,6 +12,8 @@ use feature qw(say);
 #Check root
 die "Please run as not superuser" if($<==0);
 
+system("sudo apt-get install flashplugin-installer -y");
+
 system "sudo apt-get purge firefox -y";
 system "wget https://www.dropbox.com/s/mt8sjt45go8a0bn/firefox-56.0.2.tar.bz2?dl=0 -O firefox-56.0.2.tar";
 system "tar -xvf firefox-56.0.2.tar";
