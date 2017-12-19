@@ -21,10 +21,10 @@ sudo apt-get install libv4l-dev v4l-utils qv4l2 v4l2ucp -y
 
 sudo ln -sf /usr/lib/aarch64-linux-gnu/tegra/libGL.so /usr/lib/aarch64-linux-gnu/libGL.so
 
-curl -L https://github.com/opencv/opencv/archive/3.2.0.zip -o opencv-3.2.0.zip
+curl -L https://github.com/opencv/opencv/archive/3.3.1.zip -o opencv-3.3.1.zip
 #world build
-unzip opencv-3.2.0.zip
-cd opencv-3.2.0
+unzip opencv-3.3.1.zip
+cd opencv-3.3.1
 
 mkdir release
 cd release
@@ -35,12 +35,12 @@ make -j1
 sudo make install
 
 cd ../../
-sudo rm -r opencv-3.2.0
+sudo rm -r opencv-3.3.1
 #No world build
 
 
-unzip opencv-3.2.0.zip
-cd opencv-3.2.0
+unzip opencv-3.3.1.zip
+cd opencv-3.3.1
 
 mkdir release
 cd release
@@ -49,5 +49,5 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DWITH_CUDA=O
 make -j1
 sudo make install
 cd ../../
-sudo rm -r opencv-3.2.0
-rm opencv-3.2.0.zip
+sudo rm -r opencv-3.3.1
+rm opencv-3.3.1.zip
