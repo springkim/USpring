@@ -42,3 +42,5 @@ system "cpan install Net::Address::IP::Local";
 
 #Hide Desktop icons
 system "gsettings set org.gnome.desktop.background show-desktop-icons false";
+#Enable desktop wallpaper change
+system "gsettings set org.gnome.settings-daemon.plugins.background active true";
