@@ -12,7 +12,7 @@ use feature qw(say);
 #https://askubuntu.com/questions/527990/add-a-custom-keybinding-with-gsettings-in-ubuntu/638900
 #Check root
 die "Please run as not superuser" if($<==0);
-system "sudo apt-get install xclip -y";
+system "sudo apt-get install xclip curl -y";
 
 
 my $key=`gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | sed s/]/,/`;

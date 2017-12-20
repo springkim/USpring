@@ -39,3 +39,6 @@ system "sudo echo enabled=0 | sudo tee /etc/default/apport";
 
 #install perl libries
 system "cpan install Net::Address::IP::Local";
+
+#Hide Desktop icons
+system "gsettings set org.gnome.desktop.background show-desktop-icons false";
