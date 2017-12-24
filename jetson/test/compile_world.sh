@@ -1,1 +1,1 @@
-g++ main.cpp -O2 -lopencv_world
+g++ main.cpp -O2 -std=c++11 -lopencv_world
