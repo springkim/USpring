@@ -4,6 +4,8 @@ sudo apt-get update
 
 sudo rm /usr/lib/opencv*
 sudo rm -r /usr/include/opencv* 
+sudo rm /usr/local/lib/opencv*
+sudo rm -r /usr/local/include/opencv* 
 
 sudo apt-get install build-essential curl -y
 sudo apt-get install cmake libavcodec-dev libavformat-dev libgtk2.0-dev pkg-config -y
@@ -19,6 +21,10 @@ sudo apt-get install qtbase5-dev -y
 
 sudo apt-get install libv4l-dev v4l-utils qv4l2 v4l2ucp -y
 
+
+sudo apt-get install libtiff5-dev libpng12-dev libswscale-dev libxvidcore-dev libx264-dev libxine2-dev libqt4-dev mesa-utils libgl1-mesa-dri libqt4-opengl-dev libatlas-base-dev gfortran libeigen3-dev -y
+
+
 sudo ln -sf /usr/lib/aarch64-linux-gnu/tegra/libGL.so /usr/lib/aarch64-linux-gnu/libGL.so
 
 curl -L https://github.com/opencv/opencv/archive/3.3.0.zip -o opencv-3.3.0.zip
@@ -28,9 +34,9 @@ cd opencv-3.3.0
 
 mkdir release
 cd release
-cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DWITH_CUDA=ON -DCUDA_ARCH_BIN="6.2" -DCUDA_ARCH_PTX="" -DWITH_OPENGL=OFF -DWITH_LIBV4L=ON -DWITH_GSTREMER=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_world=ON ..
+cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DWITH_CUDA=ON -DCUDA_ARCH_BIN="6.2" -DCUDA_ARCH_PTX="" -DWITH_OPENGL=OFF -DWITH_LIBV4L=ON -DWITH_FFMPEG=ON -DWITH_GSTREMER=ON -DWITH_QT=OFF -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_world=ON ..
 
-
+pause
 make -j1
 sudo make install
 
@@ -44,10 +50,16 @@ cd opencv-3.3.0
 
 mkdir release
 cd release
-cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DWITH_CUDA=ON -DCUDA_ARCH_BIN="6.2" -DCUDA_ARCH_PTX="" -DWITH_OPENGL=OFF -DWITH_LIBV4L=ON -DWITH_GSTREMER=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_world=OFF ..
+cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DWITH_CUDA=ON -DCUDA_ARCH_BIN="6.2" -DCUDA_ARCH_PTX="" -DWITH_OPENGL=OFF -DWITH_LIBV4L=ON -DWITH_FFMPEG=ON -DWITH_GSTREMER=ON -DWITH_QT=OFF -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_world=OFF ..
 
 make -j1
 sudo make install
 cd ../../
 sudo rm -r opencv-3.3.0
 rm opencv-3.3.0.zip
+
+
+
+
+
+

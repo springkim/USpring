@@ -10,12 +10,12 @@ use warnings;
 use feature qw(say);
 #Check root
 die "Please run as not superuser" if($<==0);
-system "sudo ls";
+system "sudo apt-get install curl -y";
 
 say "opencv downloading...";
 system "mkdir opencv";
 chdir("opencv");
-system "wget https://www.dropbox.com/s/sklfonyrw9g6ehz/opencv-3.3.0.zip?dl=1 -O opencv-3.3.0.zip";
+system "curl -L https://github.com/opencv/opencv/archive/3.3.0.zip -o opencv-3.3.0.zip";
 system "unzip opencv-3.3.0.zip";
 system "chmod -R 777 opencv-3.3.0";
 system "sudo apt-get install cmake -y";
@@ -23,7 +23,7 @@ system "sudo apt-get install build-essential cmake pkg-config libjpeg-dev libtif
 
 system "mkdir build";
 chdir("build");
-system "cmake ../opencv-3.3.0 -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=build -DWITH_TBB=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_world=OFF";
+system "cmake ../opencv-3.3.0 -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=build -DWITH_TBB=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_world=OFF -DWITH_CUDA=ON -DCUDA_USE_STATIC_CUDA_RUNTIME=OFF";
 # make -j? is build with ? cpu cores.
 system "make -j`cat /proc/cpuinfo | grep cores | wc -l`";
 system "make install";
@@ -40,7 +40,7 @@ chdir("..");
 ################
 # opencv world #
 ################
-system "cmake ../opencv-3.3.0 -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=build -DWITH_TBB=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_world=ON";
+system "cmake ../opencv-3.3.0 -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=build -DWITH_TBB=ON -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_world=ON -DWITH_CUDA=ON -DCUDA_USE_STATIC_CUDA_RUNTIME=OFF";
 # make -j? is build with ? cpu cores.
 system "make -j`cat /proc/cpuinfo | grep cores | wc -l`";
 system "make install";

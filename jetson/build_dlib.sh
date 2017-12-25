@@ -3,7 +3,7 @@ cd dlib
 cd examples
 mkdir build
 cd build
-cmake ..
+cmake .. -DCUDA_USE_STATIC_CUDA_RUNTIME=OFF
 cmake --build . --config Release
 cmake --install .
 sudo cp dlib_build/libdlib.a /usr/local/lib/
