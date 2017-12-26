@@ -5,3 +5,19 @@ sudo apt-get install language-pack-ko language-pack-gnome-ko language-pack-ko-ba
 
 sudo apt-get install $(check-language-support -l en) -y
 sudo apt-get install $(check-language-support -l ko) -y
+
+
+sudo add-apt-repository ppa:snwh/pulp -y
+sudo add-apt-repository ppa:numix/ppa -y
+sudo add-apt-repository ppa:noobslab/themes -y
+sudo apt-get update
+sudo apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-theme royal-gtk-theme unity-tweak-tool tweak paper-gtk-theme -y
+#install exfat
+sudo apt-get install exfat-fuse exfat-utils -y
+
+sudo echo enabled=0 | sudo tee /etc/default/apport
+
+
+
+gsettings set org.gnome.desktop.background show-desktop-icons false
+gsettings set org.gnome.settings-daemon.plugins.background active true
