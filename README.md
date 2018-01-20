@@ -46,6 +46,8 @@ And you have to run **install_opencv.pl** first.
 
 ##### <img src="https://i.imgur.com/XZjnG46.png" width="48"> install_neofetch.pl `System information`
 Original source is [here](https://github.com/dylanaraps/neofetch)
+##### <img src="https://i.imgur.com/VTLbdOb.png" width="48"> install_atom.pl `Text Editor`
+
 
 ### dev
 ```

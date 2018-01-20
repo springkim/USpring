@@ -34,6 +34,8 @@ system "sudo apt-get update";
 system "sudo apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-theme royal-gtk-theme unity-tweak-tool tweak paper-gtk-theme -y";
 #install exfat
 system "sudo apt-get install exfat-fuse exfat-utils -y";
+#install gparted
+system "sudo apt-get install gparted -y";
 
 system "sudo echo enabled=0 | sudo tee /etc/default/apport";
 
