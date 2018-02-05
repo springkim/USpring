@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-#  install_basic.pl
+#  Desktop/install_basic.pl
 #  USpring
 #
 #  Created by kimbom on 2017. 11. 2...
@@ -8,11 +8,9 @@
 use strict;
 use warnings;
 use feature qw(say);
-
 #Check root
 die "Please run as not superuser" if($<==0);
-system "sudo ls";
-
+#Input github information
 print "github user.name : ";
 my $github_name=<STDIN>;
 chomp($github_name);
@@ -25,23 +23,21 @@ system "sudo apt-get update && sudo apt-get upgrade -y";
 system 'sudo apt-get install gcc g++ fpc python3 vim git inkscape cmake -y';
 system "git config --global user.name \"$github_name\"";
 system "git config --global user.email \"$github_email\"";
-
-#install theme
+system "git config --global credential.helper 'cache --timeout=1000000'";
+#Install theme
 system "sudo add-apt-repository ppa:snwh/pulp -y";
 system "sudo add-apt-repository ppa:numix/ppa -y";
 system "sudo add-apt-repository ppa:noobslab/themes -y";
 system "sudo apt-get update";
 system "sudo apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-theme royal-gtk-theme unity-tweak-tool tweak paper-gtk-theme -y";
-#install exfat
+#Install exfat
 system "sudo apt-get install exfat-fuse exfat-utils -y";
-#install gparted
+#Install gparted
 system "sudo apt-get install gparted -y";
-
+#Disable error report
 system "sudo echo enabled=0 | sudo tee /etc/default/apport";
-
-#install perl libries
+#Install perl libries
 system "cpan install Net::Address::IP::Local";
-
 #Hide Desktop icons
 system "gsettings set org.gnome.desktop.background show-desktop-icons false";
 #Enable desktop wallpaper change
