@@ -20,16 +20,16 @@ system "sudo apt -y install x11-apps xfonts-base xfonts-100dpi xfonts-75dpi xfon
 system "echo \"export DISPLAY=:0\" >> ~/.bashrc";
 #install korean font
 system "sudo apt-get install language-pack-ko fonts-unfonts-core fonts-unfonts-extra fonts-baekmuk fonts-nanum fonts-nanum-coding fonts-nanum-extra -y";
-my $data=do{
-    local $/=undef;
-    <DATA>;
-};
-my $tmpfile="install_wsl_baslic.tmp.pl";
-open FP,">",$tmpfile;
-print FP $data;
-close FP;
-system "sudo perl $tmpfile";
-unlink $tmpfile;
+#my $data=do{
+#    local $/=undef;
+#    <DATA>;
+#};
+#my $tmpfile="install_wsl_baslic.tmp.pl";
+#open FP,">",$tmpfile;
+#print FP $data;
+#close FP;
+#system "sudo perl $tmpfile";
+#unlink $tmpfile;
 
 #install basic program.
 system "sudo apt-get install firefox gedit nautilus file-roller -y";
