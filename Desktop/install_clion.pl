@@ -18,6 +18,8 @@ system "curl -L https://download.jetbrains.com/cpp/CLion-$version.tar.gz -o clio
 system "tar xzvf clion.tar.gz";
 system "mkdir ~/Program" unless(-d "$ENV{'HOME'}/Program");
 system "mv clion-$version ~/Program/";
+system "curl -L https://www.dropbox.com/s/jq516y9s9n056ls/Material_Theme-1.5.2.zip?dl=1 -o $ENV{'HOME'}/Program/clion-$version/Material_Theme-1.5.2.zip";
+system "curl -L https://www.dropbox.com/s/u3gav8tcwxdxnfu/settings.jar?dl=1 -o $ENV{'HOME'}/Program/clion-$version/settings.jar";
 system "rm clion.tar.gz";
 system "sudo ln -s ~/Program/clion-2017.3.3/bin/clion.sh /usr/bin/clion";
 #Create desktop shortcut

@@ -52,6 +52,13 @@ BTW, This script is for Apache2-cgi(perl). I think I'm the only one who'll use i
 
 **[CLion](https://www.jetbrains.com/clion/)** is a smart C and C++ editor. It using CMake as a project model, CLion handles your changes in CMake files automatically, using all the information from there during code editing and refactorings.
 
+It contains theme setting files too.
+1. Go to `File -> Settings -> Plugins -> Install plugin from dist` and select `~/Program/clion-2017.3.3/Material_Theme01.5.2.zip`.
+2. Go to `File -> Import Setting` and select `~/Program/clion-2017.3.3/settings.jar`.
+
+<img src="http://i67.tinypic.com/2r5yvt0.png" width="512">
+
+
 ### <img src="http://i63.tinypic.com/kdwj1x.png" width="64">CUDA
 <img src="http://i67.tinypic.com/16hiyph.png" height="20">
 
