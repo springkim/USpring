@@ -20,6 +20,7 @@ You have to install `install_basic.pl` or `install_wsl_basic.pl` or `install_jet
 
 ### <img src="http://i65.tinypic.com/2hyz6rm.png" width="64">Basic
 <img src="http://i68.tinypic.com/f0n7mv.png" height="20">
+
 This script will install  **git** ,**gcc**, **g++** , **fpc** , **python3** , **vim** , **inkscape** , **cmake** , **gparted** , **exfat-utils** , **exfat-fuse** and **Royal-GTK-Theme** , **Numix-Icon** .
 And installing some dependencies for other scripts.
 
