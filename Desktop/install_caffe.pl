@@ -66,4 +66,3 @@ system "sudo cp -r caffe/distribute/python/caffe /usr/local/lib/python3.5/dist-p
 
 #Remove installation file
 system "sudo rm -r caffe";
-system "sudo rm caffe.zip";
