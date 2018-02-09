@@ -1,8 +1,8 @@
 #!/usr/bin/perl
-#  install_java.pl
+#  Desktop/install_java.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 8. 22...
+#  Created by kimbom on 2017. 08. 22...
 #  Copyright 2017 kimbom. All rights reserved.
 #
 use strict;

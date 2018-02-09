@@ -1,4 +1,10 @@
 #!/usr/bin/perl
+#  Desktop/install_matlab.pl
+#  USpring
+#
+#  Created by kimbom on 2018. 02. 09...
+#  Copyright 2018 kimbom. All rights reserved.
+#
 use strict;
 use warnings;
 use feature qw(say);
@@ -16,7 +22,6 @@ print FP $data;
 close FP;
 system "sudo perl $tmpfile";
 unlink $tmpfile;
-
 
 
 __DATA__

@@ -2,7 +2,7 @@
 #  Desktop/install_basic.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 11. 2...
+#  Created by kimbom on 2017. 11. 02...
 #  Copyright 2017 kimbom. All rights reserved.
 #
 use strict;

@@ -1,16 +1,16 @@
 #!/usr/bin/perl
-#  install_kor2eng_dir.pl
+#  Desktop/install_kor2eng_dir.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 11. 4...
-#  Copyright 2017 kimbom. All rights reserved.
+#  Created by kimbom on 2018. 02. 09...
+#  Copyright 2018 kimbom. All rights reserved.
 #
 use strict;
 use warnings;
 use feature qw(say);
 #Check root
 die "Please run as not superuser" if($<==0);
-chdir($ENV{HOME});
+chdir($ENV{'HOME'});
 if(-d "다운로드"){
 	unless(-d "Downloads"){
 		system "mv 다운로드 Downloads";

@@ -47,17 +47,18 @@ python3-pip
 $cmd=~s/\n/ /g;
 system $cmd;
 #Purge OpenCV
-system "sudo rm -r /usr/include/opencv/";
-system "sudo rm -r /usr/include/opencv2/";
+system "sudo rm -r /usr/include/opencv/" if(-d "/usr/include/opencv/");
+system "sudo rm -r /usr/include/opencv2/" if(-d "/usr/include/opencv2/");
 system "sudo rm /usr/lib/*opencv*";
 #Download OpenCV3.X
+chdir "/tmp";
 mkdir "opencv";
 chdir "opencv";
 system "git clone https://github.com/opencv/opencv";
 system "git clone https://github.com/RLovelett/eigen";
 my @options=("OFF","ON");
 foreach my $option(@options){
-	system "sudo rm -r build";
+	system "sudo rm -r build" if(-d "build");
 	mkdir "build";
 	chdir "build";
 #Build OpenCV3.X

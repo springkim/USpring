@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-#  install_firefox56.pl.pl
+#  Desktop/install_firefox56.pl
 #  USpring
 #
 #  Created by kimbom on 2017. 11. 20...
@@ -11,17 +11,21 @@ use feature qw(say);
 
 #Check root
 die "Please run as not superuser" if($<==0);
-
-system("sudo apt-get install flashplugin-installer -y");
-
+#Remove default firefox(It maybe a firefox>=57)
 system "sudo apt-get purge firefox -y";
-system "wget https://www.dropbox.com/s/mt8sjt45go8a0bn/firefox-56.0.2.tar.bz2?dl=0 -O firefox-56.0.2.tar";
+#Install dependencies
+system "sudo apt-get install flashplugin-installer -y";
+#Download firefox
+chdir "/tmp/";
+system "curl -L https://ftp.mozilla.org/pub/firefox/releases/56.0.2/linux-x86_64/ko/firefox-56.0.2.tar.bz2 -o firefox-56.0.2.tar.bz2";
+system "bzip2 -d firefox-56.0.2.tar.bz2";
 system "tar -xvf firefox-56.0.2.tar";
+unlink "firefox-56.0.2.tar";
 chdir "firefox";
 system "sudo cp -R * /usr/bin/";
 chdir "..";
 system "sudo rm -r firefox";
-unlink "firefox-56.0.2.tar";
+#Create desktop shortcut
 my $data=do{
     local $/=undef;
     <DATA>;
@@ -32,7 +36,6 @@ print FP $data;
 close FP;
 system "sudo perl $tmpfile";
 unlink $tmpfile;
-
 my $desktop="application://firefox.desktop";
 my $cmd=`gsettings get com.canonical.Unity.Launcher favorites | sed s/]/,/`;
 chomp($cmd);
@@ -55,6 +58,6 @@ EOF
 ;
 print FP $data;
 close FP;
-system "wget https://www.dropbox.com/s/1uu2ssef3xfwsoh/Firefox.png?dl=0 -O /opt/firefox.png";
+system "curl -L http://pngimg.com/uploads/firefox/firefox_PNG21.png -o /opt/firefox.png";
 
 

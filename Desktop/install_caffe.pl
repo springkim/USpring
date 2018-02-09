@@ -1,36 +1,54 @@
 #!/usr/bin/perl
-#  install_caffe.pl
+#  Desktop/install_caffe.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 11. 1...
-#  Copyright 2017 kimbom. All rights reserved.
+#  Created by kimbom on 2018. 02. 09...
+#  Copyright 2018 kimbom. All rights reserved.
 #
 use strict;
 use warnings;
 use feature qw(say);
 #Check root
 die "Please run as not superuser" if($<==0);
-
+#Install dependencies
+my $cmd="sudo apt-get install -y
+build-essential
+cmake
+git
+pkg-config
+libprotobuf-dev
+libleveldb-dev
+libsnappy-dev
+libhdf5-serial-dev
+protobuf-compiler
+libatlas-base-dev
+--no-install-recommends libboost-all-dev
+libgflags-dev
+libgoogle-glog-dev
+liblmdb-dev
+python2.7-dev
+python3-dev
+python-numpy
+python3-numpy
+python-pip
+python3-pip
+python-scipy
+python3-scipy
+";
+$cmd=~s/\n/ /g;
+system $cmd;
 system "sudo -H pip install --upgrade pip";
-#Prepare to caffe
-system "sudo apt-get install -y build-essential cmake git pkg-config libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev";
-system "sudo apt-get install -y --no-install-recommends libboost-all-dev";
-system "sudo apt-get install -y libgflags-dev libgoogle-glog-dev liblmdb-dev";
-
-system "sudo apt-get install -y python-pip";
-system "sudo apt-get install -y python-dev";
-system "sudo apt-get install -y python-numpy python-scipy";
-
-#download caffe
-system "wget https://www.dropbox.com/s/zxmk0cz9o53y2as/caffe.zip?dl=1 -O caffe.zip";
-system "unzip caffe.zip";
-
-#make caffe
+#Download caffe
+chdir "/tmp/";
+system "git clone https://github.com/BVLC/caffe";
+system "curl -L https://www.dropbox.com/s/19es3odx4guhpw4/Makefile.config?dl=1 -o /tmp/caffe/Makefile.config";
+#Build caffe
 chdir "caffe";
 chdir "python";
-system "perl install_python_requirements.pl";
+system "pip2 install -r requirements.txt";
+system "pip3 install -r requirements.txt";
 chdir "..";
-system 'make all -j $(($(nproc) + 1))';
+system "make all -j2";
 system "make test && make runtest";
 system "make pycaffe && make distribute";
 chdir "..";

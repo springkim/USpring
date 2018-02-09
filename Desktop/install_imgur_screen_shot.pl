@@ -1,8 +1,8 @@
 #!/usr/bin/perl
-#  install_imgur_screen_shot.pl
+#  Desktop/install_imgur_screen_shot.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 8. 25...
+#  Created by kimbom on 2017. 08. 25...
 #  Copyright 2017 kimbom. All rights reserved.
 #
 use strict;

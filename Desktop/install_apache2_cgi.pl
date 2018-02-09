@@ -2,13 +2,14 @@
 #  install_apache2_cgi.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 8. 5...
+#  Created by kimbom on 2017. 08. 05...
 #  Copyright 2017 Sogang CVIP lab. All rights reserved.
 #
-#system "cpan install Net::Address::IP::Local";
+
 use strict;
 use warnings;
 use feature qw(say);
+#system "cpan install Net::Address::IP::Local";
 use Net::Address::IP::Local;
 #Check root
 die "Please run as not superuser" if($<==0);
@@ -30,8 +31,8 @@ system "sudo perl $tmpfile";
 unlink $tmpfile;
 print "
 ===============================================================
-모든 설치가 끝났습니다.
-마지막으로 콘솔창에서 아래의 명령어로 apache2 를 재시작 하십시오.
+Install finished
+Type below command for run apache2
 service apache2 restart
 ================================================================
 ";
@@ -68,6 +69,7 @@ $doc=~s/webmaster\@localhost/$email\n\n$append_element/;
 open FP,">","/etc/apache2/sites-enabled/000-default.conf" or die "$!\n";
 print FP $doc;
 close FP;
+system "sudo mv /var/www/html /var/www/$root_dir";
 
 my $doc2=do{
     local $/=undef;
