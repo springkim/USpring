@@ -96,6 +96,3 @@ system "pip3 install opencv-python";
 #Remove build files
 chdir "..";
 system "sudo rm -r opencv/";
-
-
-
