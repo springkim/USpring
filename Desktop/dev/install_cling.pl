@@ -27,7 +27,7 @@ print $dirname,"\n";
 my $home=$ENV{"HOME"};
 open FP,">>",$ENV{"HOME"}."/.bashrc";
 print FP "\n\n";
-print FP "export PATH=$home/$dirname/bin"."\n";
+print FP "export PATH=$home/$dirname/bin:\$PATH"."\n";
 close FP;
 
 chdir "$home/$dirname/share/cling/Jupyter/kernel";
