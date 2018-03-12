@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-#  Desktop/install_opencv.pl
+#  WSL/install_wsl_opencv.pl
 #  USpring
 #
 #  Created by kimbom on 2017. 9. 22...
@@ -13,6 +13,7 @@ die "Please run as not superuser" if($<==0);
 #Install dependencies
 my $cmd="sudo apt-get install -y
 curl
+git
 cmake
 build-essential
 pkg-config
@@ -43,23 +44,24 @@ python-numpy
 python3-numpy
 python-pip
 python3-pip
-libgtk2.0-dev
-pkg-config
 ";
 $cmd=~s/\n/ /g;
 system $cmd;
 #Purge OpenCV
-system "sudo rm -r /usr/include/opencv/";
-system "sudo rm -r /usr/include/opencv2/";
+system "sudo rm -r /usr/include/opencv/" if(-d "/usr/include/opencv/");
+system "sudo rm -r /usr/include/opencv2/" if(-d "/usr/include/opencv2/");
 system "sudo rm /usr/lib/*opencv*";
 #Download OpenCV3.X
+chdir "/tmp";
 mkdir "opencv";
 chdir "opencv";
 system "git clone https://github.com/opencv/opencv";
 system "git clone https://github.com/RLovelett/eigen";
-my @options=("OFF","ON");
-foreach my $option(@options){
-	system "sudo rm -r build";
+system "git clone https://github.com/opencv/opencv_contrib";
+my @world=("OFF","ON");
+my @contrib=("-DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules","");
+for(my $i=0;$i<2;$i++){
+	system "sudo rm -r build" if(-d "build");
 	mkdir "build";
 	chdir "build";
 #Build OpenCV3.X
@@ -77,7 +79,8 @@ foreach my $option(@options){
 	-DWITH_CUDA=OFF
 	-DWITH_OPENCL=OFF
 	-DBUILD_opencv_python=OFF
-	-DBUILD_opencv_world=$option
+	-DBUILD_opencv_world=$world[$i]
+	$contrib[$i]
 	";
 	$cmd=~s/\n/ /g;
 	system $cmd;
@@ -85,8 +88,8 @@ foreach my $option(@options){
 	system "make install";
 	chdir "build";
 #Install OpenCV3.X
-	system "sudo cp -r include/opencv /usr/include/";
-	system "sudo cp -r include/opencv2 /usr/include/";
+	system "sudo cp -r include/opencv /usr/include/" if($i==0);
+	system "sudo cp -r include/opencv2 /usr/include/" if($i==0);
 	system "sudo cp lib/lib* /usr/lib/";
 	chdir "../../";
 }

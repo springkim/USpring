@@ -80,7 +80,7 @@ for(my $i=0;$i<2;$i++){
 	-DWITH_OPENCL=OFF
 	-DBUILD_opencv_python=OFF
 	-DBUILD_opencv_world=$world[$i]
-	@contrib[$i]
+	$contrib[$i]
 	";
 	$cmd=~s/\n/ /g;
 	system $cmd;

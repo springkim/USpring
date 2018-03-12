@@ -40,6 +40,6 @@ system "sudo echo enabled=0 | sudo tee /etc/default/apport";
 system "cpan install Net::Address::IP::Local";
 system "cpan install HTML::LinkExtractor";
 #Hide Desktop icons
-system "gsettings set org.gnome.desktop.background show-desktop-icons false";
+#system "gsettings set org.gnome.desktop.background show-desktop-icons false";
 #Enable desktop wallpaper change
-system "gsettings set org.gnome.settings-daemon.plugins.background active true";
+#system "gsettings set org.gnome.settings-daemon.plugins.background active true";
