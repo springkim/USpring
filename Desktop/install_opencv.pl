@@ -13,6 +13,7 @@ die "Please run as not superuser" if($<==0);
 #Install dependencies
 my $cmd="sudo apt-get install -y
 curl
+git
 cmake
 build-essential
 pkg-config
@@ -56,8 +57,10 @@ mkdir "opencv";
 chdir "opencv";
 system "git clone https://github.com/opencv/opencv";
 system "git clone https://github.com/RLovelett/eigen";
-my @options=("OFF","ON");
-foreach my $option(@options){
+system "git clone https://github.com/opencv/opencv_contrib";
+my @world=("OFF","ON");
+my @contrib=("-DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules","");
+for(my $i=0;$i<2;$i++){
 	system "sudo rm -r build" if(-d "build");
 	mkdir "build";
 	chdir "build";
@@ -76,7 +79,8 @@ foreach my $option(@options){
 	-DWITH_CUDA=OFF
 	-DWITH_OPENCL=OFF
 	-DBUILD_opencv_python=OFF
-	-DBUILD_opencv_world=$option
+	-DBUILD_opencv_world=$world[$i]
+	@contrib[$i]
 	";
 	$cmd=~s/\n/ /g;
 	system $cmd;
@@ -84,8 +88,8 @@ foreach my $option(@options){
 	system "make install";
 	chdir "build";
 #Install OpenCV3.X
-	system "sudo cp -r include/opencv /usr/include/";
-	system "sudo cp -r include/opencv2 /usr/include/";
+	system "sudo cp -r include/opencv /usr/include/" if($i==0);
+	system "sudo cp -r include/opencv2 /usr/include/" if($i==0);
 	system "sudo cp lib/lib* /usr/lib/";
 	chdir "../../";
 }
