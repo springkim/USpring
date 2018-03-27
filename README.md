@@ -119,6 +119,32 @@ Java is a general-purpose computer-programming language that is concurrent, clas
 
 **[OpenCV](https://opencv.org/)** is open source computer vision library.
 
+It will install `opencv2(latest)`, `opencv3(latest with contrib)` and `opencv3(latest as world)`.
+BCZ, opencv2 is for C. gcc can't compile opencv3.x
+So i made opencv installer for both compiler.
+##### Compile as C(gcc)
+```bash
+gcc <...> `pkg-config --libs opencv2`
+```
+```bash
+gcc <...> -lopencv_coreC -lopencv_highguiC ...
+```
+##### Compile as C＋＋(g＋＋)
+```bash
+g++ <...> `pkg-config --libs opencv3`
+```
+```bash
+g++ <...> `pkg-config --libs opencv`
+```
+```bash
+g++ <...> -lopencv_core -lopencv_highgui ...
+```
+```bash
+g++ <...> -lopencv_world
+```
+It automatically select right header for compiler.
+
+
 ### <img src="http://i67.tinypic.com/2801mqe.png" width="64">Teamviewer
 <img src="http://i68.tinypic.com/f0n7mv.png" height="20">
 

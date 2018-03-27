@@ -39,6 +39,7 @@ system "sudo echo enabled=0 | sudo tee /etc/default/apport";
 #Install perl libries
 system "cpan install Net::Address::IP::Local";
 system "cpan install HTML::LinkExtractor";
+system "cpan install WWW::Mechanize";
 #Hide Desktop icons
 #system "gsettings set org.gnome.desktop.background show-desktop-icons false";
 #Enable desktop wallpaper change
