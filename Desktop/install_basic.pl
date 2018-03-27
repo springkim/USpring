@@ -20,7 +20,7 @@ chomp($github_email);
 
 system "sudo apt-get update && sudo apt-get upgrade -y";
 
-system 'sudo apt-get install gcc g++ fpc python3 vim git inkscape cmake -y';
+system 'sudo apt-get install gcc g++ fpc python3 vim git inkscape cmake curl gdebi -y';
 system "git config --global user.name \"$github_name\"";
 system "git config --global user.email \"$github_email\"";
 system "git config --global credential.helper 'cache --timeout=1000000'";

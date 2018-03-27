@@ -11,7 +11,9 @@ use feature qw(say);
 #Check root
 die "Please run as not superuser" if($<==0);
 #Install dependencies
-system "sudo apt-get install linux-headers-$(uname -r)";
+system 'sudo apt-get install linux-headers-$(uname -r)';
+die;
+system "sudo apt-get install curl -y";
 #Download & Install CUDA-8.0.61
 chdir "/tmp/";
 system "curl -L https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb -o /tmp/cuda.deb";
