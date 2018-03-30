@@ -6,6 +6,45 @@ use File::Find qw/finddepth/;
 use File::Path qw/mkpath/;
 use File::Copy;
 use List::MoreUtils qw/first_index/;
+
+my $requirements="sudo apt-get install -y
+curl
+git
+cmake
+build-essential
+pkg-config
+libjpeg-dev
+libtiff5-dev
+libjasper-dev
+libpng12-dev
+libavcodec-dev
+libavformat-dev
+libswscale-dev
+libxvidcore-dev
+libx264-dev
+libxine2-dev
+libv4l-dev
+v4l-utils
+libgstreamer1.0-dev
+libgstreamer-plugins-base1.0-dev
+libqt4-dev
+mesa-utils
+libgl1-mesa-dri
+libqt4-opengl-dev
+libatlas-base-dev
+gfortran
+libeigen3-dev
+python2.7-dev
+python3-dev
+python-numpy
+python3-numpy
+python-pip
+python3-pip
+";
+$requirements=~s/\n/ /g;
+system $requirements;
+
+
 chdir "/tmp/";
 sub OpenCVUrl($){
 	my $ver=shift;
