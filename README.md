@@ -99,10 +99,6 @@ The NVIDIA CUDA® Deep Neural Network library (**[cuDNN](https://developer.nvidi
 
 Mozilla **[Firefox](https://www.mozilla.org/ko/firefox/new/)** (or simply Firefox) is a free and open-source web browser developed by Mozilla Foundation and its subsidiary, Mozilla Corporation. Firefox-56 is the latest version before Quantum. Quantum not support multirow-tab and multirow-bookmark. so i still use firefox56.
 
-### <img src="http://i63.tinypic.com/kdwj1x.png" width="64">GPU
-
-<img src="http://i64.tinypic.com/axfrtk.png" height="20"> This is NVIDIA Graphic driver. It will restart automatically after installation.
-
 ### <img src="http://i65.tinypic.com/2rqlnie.png" width="64">Haroopad
 
 <img src="http://i67.tinypic.com/nyxqag.png" height="20">
@@ -149,6 +145,12 @@ It will make english name directory at home directory. Because, Some library or 
 <img src="http://i68.tinypic.com/f0n7mv.png" height="20">
 
 **[Neofetch](https://github.com/dylanaraps/neofetch)** is a CLI system information tool written in BASH. Neofetch displays information about your system next to an image, your OS logo, or any ASCII file of your choice. The main purpose of Neofetch is to be used in screenshots to show other users what OS/Distro you're running, what Theme/Icons you're using etc.
+
+### <img src="http://i63.tinypic.com/kdwj1x.png" width="64">NVIDIA_Driver
+
+<img src="http://i64.tinypic.com/axfrtk.png" height="20">
+
+This is NVIDIA Graphic driver. It will restart automatically after installation.
 
 ### <img src="http://i65.tinypic.com/291oodu.png" width="64">OpenCV
 
