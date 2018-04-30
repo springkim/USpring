@@ -31,8 +31,8 @@ system "sudo apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-
 my @arr=`lsb_release -a` =~ /^Release:\s+(.+)$/m;
 if($arr[0] eq "18.04"){
 	system "sudo apt install gnome-tweak-tool -y";
-	system "curl -L https://www.dropbox.com/s/3ubnlmiaxmah722/Vimix-Dark.tar.xz?dl=1 -o ~/.themes/Vimix-Dark.tar.xz";
 	system "mkdir ~/.themes" unless(-d "~/.themes");
+	system "curl -L https://www.dropbox.com/s/3ubnlmiaxmah722/Vimix-Dark.tar.xz?dl=1 -o ~/.themes/Vimix-Dark.tar.xz";
 	system "cd ~/.themes/ && tar -xvf Vimix-Dark.tar.xz";
 	system "gsettings set org.gnome.desktop.interface gtk-theme Vimix-Dark-Doder";
 	system "gsettings set org.gnome.desktop.interface icon-theme Numix-Circle-Light";
