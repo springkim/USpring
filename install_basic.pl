@@ -37,6 +37,11 @@ if($arr[0] eq "18.04"){
 	system "gsettings set org.gnome.desktop.interface gtk-theme Vimix-Dark-Doder";
 	system "gsettings set org.gnome.desktop.interface icon-theme Numix-Circle-Light";
 	#https://www.gnome-look.org/p/1013698/
+
+	#Language
+	system "sudo apt-get install uim -y";
+	system "im-config -n uim";
+	
 }else{	#16.04
 	system "sudo add-apt-repository ppa:snwh/pulp -y";
 	system "sudo add-apt-repository ppa:noobslab/themes -y";

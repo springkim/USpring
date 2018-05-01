@@ -9,6 +9,21 @@ use strict;
 use warnings;
 use feature qw(say);
 use LWP::Simple;
+sub AddFavorite($){
+	my @arr=`lsb_release -a` =~ /^Release:\s+(.+)$/m;
+	my $desktop="";
+	my $path="";
+	if($arr[0] eq "18.04"){
+		$desktop=shift;
+		$path="org.gnome.shell favorite-apps";
+	}else{
+		$desktop="application://".shift;
+		$path="com.canonical.Unity.Launcher favorites";
+	}
+	my $cmd=`gsettings get $path | sed s/]/,/`;
+	chomp($cmd);
+	system "gsettings set $path \"$cmd \'$desktop\']\"";
+}
 #Check root
 die "Please run as not superuser" if($<==0);
 #Download CLION
@@ -38,10 +53,7 @@ print FP $data;
 close FP;
 system "sudo perl $tmpfile";
 unlink $tmpfile;
-my $desktop="application://jetbrain.clion.desktop";
-my $cmd=`gsettings get com.canonical.Unity.Launcher favorites | sed s/]/,/`;
-chomp($cmd);
-system "gsettings set com.canonical.Unity.Launcher favorites \"$cmd \'$desktop\']\"";
+AddFavorite "jetbrain.clion.desktop";
 __DATA__
 use strict;
 use warnings;

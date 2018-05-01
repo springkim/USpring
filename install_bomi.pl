@@ -11,6 +11,9 @@ use feature qw(say);
 
 #Check root
 die "Please run as not superuser" if($<==0);
+my @arr=`lsb_release -a` =~ /^Release:\s+(.+)$/m;
+die "Bomi is not woring on 18.04" if($arr[0] eq "18.04")
+
 #Install dependencies
 system "sudo apt-get install gdebi-core -y";
 #Download bomi(It can't download from ppa)
