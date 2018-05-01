@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use feature qw(say);
 sub AddFavorite($){
-	my @arr=`lsb_release -a` =~ /^Release:\s+(.+)$/m;
+	my @arr=`lsb_release -a  2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 	my $desktop="";
 	my $path="";
 	if($arr[0] eq "18.04"){
@@ -27,5 +27,3 @@ system "sudo dpkg -i google-chrome-stable_current_amd64.deb";
 unlink "google-chrome-stable_current_amd64.deb";
 
 AddFavorite "google-chrome.desktop";
-
-

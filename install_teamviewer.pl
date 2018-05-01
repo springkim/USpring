@@ -8,10 +8,24 @@
 use strict;
 use warnings;
 use feature qw(say);
-
+sub AddFavorite($){
+	my @arr=`lsb_release -a` =~ /^Release:\s+(.+)$/m;
+	my $desktop="";
+	my $path="";
+	if($arr[0] eq "18.04"){
+		$desktop=shift;
+		$path="org.gnome.shell favorite-apps";
+	}else{
+		$desktop="application://".shift;
+		$path="com.canonical.Unity.Launcher favorites";
+	}
+	my $cmd=`gsettings get $path | sed s/]/,/`;
+	chomp($cmd);
+	system "gsettings set $path \"$cmd \'$desktop\']\"";
+}
 #Check root
 die "Please run as not superuser" if($<==0);
-system "sudo ls";
+system "sudo ls >/tmp/nul";
 #Download teamviewer
 chdir "/tmp/";
 system "curl -L https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -o teamviewer.deb";
@@ -30,10 +44,7 @@ print FP $data;
 close FP;
 system "sudo perl $tmpfile";
 unlink $tmpfile;
-
-my $desktop="application://teamviewer.desktop";
-my $cmd=`gsettings get com.canonical.Unity.Launcher favorites | sed s/]/,/`;
-system "gsettings set com.canonical.Unity.Launcher favorites \"$cmd \'$desktop\']\"";
+AddFavorite "teamviewer.desktop";
 __DATA__
 use strict;
 use warnings;

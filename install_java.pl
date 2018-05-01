@@ -12,7 +12,7 @@ use feature qw(say);
 #Check root
 die "Please run as not superuser" if($<==0);
 system "sudo ls >/tmp/nul";
-my @arr=`lsb_release -a` =~ /^Release:\s+(.+)$/m;
+my @arr=`lsb_release -a 2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 if($arr[0] eq "18.04"){
 	system "sudo apt-get install openjdk-11-jdk -y";
 }else{

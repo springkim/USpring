@@ -10,7 +10,7 @@ use warnings;
 use feature qw(say);
 use WWW::Mechanize;
 sub AddFavorite($){
-	my @arr=`lsb_release -a` =~ /^Release:\s+(.+)$/m;
+	my @arr=`lsb_release -a 2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 	my $desktop="";
 	my $path="";
 	if($arr[0] eq "18.04"){
@@ -44,4 +44,3 @@ system "sudo apt-get install -f -y";
 system "sudo dpkg -i haroopad.deb";
 unlink "haroopad.deb";
 AddFavorite "Haroopad.desktop";
-

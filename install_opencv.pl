@@ -15,8 +15,6 @@ build-essential
 pkg-config
 libjpeg-dev
 libtiff5-dev
-libjasper-dev
-libpng12-dev
 libavcodec-dev
 libavformat-dev
 libswscale-dev
@@ -41,6 +39,10 @@ python3-numpy
 python-pip
 python3-pip
 ";
+my @arr=`lsb_release -a  2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
+if($arr[0] eq "16.04"){
+	$requirements.="libpng12-dev libjasper-dev";
+}
 $requirements=~s/\n/ /g;
 system $requirements;
 
@@ -69,7 +71,9 @@ chdir "opencv";
 
 `curl --silent -L $_ -O -J` or push @names,$_ foreach OpenCVUrl(2);
 `curl --silent -L $_ -O -J` or push @names,$_ foreach OpenCVUrl(3);
-`unzip opencv-2* && unzip opencv-3* && unzip opencv_contrib-3*`;
+`unzip opencv-2*`;
+`unzip opencv-3*`;
+`unzip opencv_contrib-3*`;
 `git clone https://github.com/RLovelett/eigen`;
 `rm *.zip`;
 mkdir "build2";

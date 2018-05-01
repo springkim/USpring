@@ -9,7 +9,7 @@ use strict;
 use warnings;
 use feature qw(say);
 sub AddFavorite($){
-	my @arr=`lsb_release -a` =~ /^Release:\s+(.+)$/m;
+	my @arr=`lsb_release -a 2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 	my $desktop="";
 	my $path="";
 	if($arr[0] eq "18.04"){
@@ -70,5 +70,3 @@ EOF
 print FP $data;
 close FP;
 system "curl -L http://pngimg.com/uploads/firefox/firefox_PNG21.png -o /opt/firefox.png";
-
-

@@ -28,20 +28,20 @@ system "git config --global credential.helper 'cache --timeout=1000000'";
 system "sudo add-apt-repository ppa:numix/ppa -y";
 system "sudo apt-get update";
 system "sudo apt-get install numix-gtk-theme numix-icon-theme-circle numix-icon-theme -y";
-my @arr=`lsb_release -a` =~ /^Release:\s+(.+)$/m;
+my @arr=`lsb_release -a  2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 if($arr[0] eq "18.04"){
 	system "sudo apt install gnome-tweak-tool -y";
 	system "mkdir ~/.themes" unless(-d "~/.themes");
-	system "curl -L https://www.dropbox.com/s/3ubnlmiaxmah722/Vimix-Dark.tar.xz?dl=1 -o ~/.themes/Vimix-Dark.tar.xz";
-	system "cd ~/.themes/ && tar -xvf Vimix-Dark.tar.xz";
-	system "gsettings set org.gnome.desktop.interface gtk-theme Vimix-Dark-Doder";
+	system "curl -L https://www.dropbox.com/s/j52tq5co6hyhwjc/Snow.tar.xz?dl=1 -o ~/.themes/Snow.tar.xz";
+	system "cd ~/.themes/ && tar -xvf Snow.tar.xz";
+	system "gsettings set org.gnome.desktop.interface gtk-theme Snow";
 	system "gsettings set org.gnome.desktop.interface icon-theme Numix-Circle-Light";
 	#https://www.gnome-look.org/p/1013698/
 
 	#Language
 	system "sudo apt-get install uim -y";
 	system "im-config -n uim";
-	
+
 }else{	#16.04
 	system "sudo add-apt-repository ppa:snwh/pulp -y";
 	system "sudo add-apt-repository ppa:noobslab/themes -y";
@@ -64,3 +64,7 @@ system "sudo cpan install WWW::Mechanize";
 #system "gsettings set org.gnome.desktop.background show-desktop-icons false";
 #Enable desktop wallpaper change
 #system "gsettings set org.gnome.settings-daemon.plugins.background active true";
+
+
+######
+system "sudo apt-get install ubuntu-restricted-extras -y";

@@ -3,7 +3,6 @@
 
 ### Ubuntu18.04,16.04(x64) Setup Project
 
-
 ### Repository directories
 
 #### .
@@ -51,7 +50,7 @@ The **[Apache](https://httpd.apache.org/)** HTTP Server Project is an effort to 
 
 **[Atom](https://atom.io/)** is a text editor that's modern, approachable, yet hackable to the core—a tool you can customize to do anything but also use productively without ever touching a config file.
 
-### <img src="http://i65.tinypic.com/2udyfdk.png" width="64">Bomi
+### <img src="http://i65.tinypic.com/2udyfdk.png" width="64">Bomi(16.04 only)
 
 <img src="http://i63.tinypic.com/5308qv.png" height="20">
 
@@ -89,7 +88,7 @@ You can select performance mode(set to highest clock) and powersave mode(normal)
 
 ### <img src="http://i66.tinypic.com/2wc343k.png" width="64">CUDNN
 
-<img src="http://i65.tinypic.com/2d9egc9.png" height="20"><img src="http://i63.tinypic.com/xeeu84.png" height="20"><img src="http://i63.tinypic.com/rh8pz8.png" height="20">
+<img src="http://i63.tinypic.com/rh8pz8.png" height="20">
 
 The NVIDIA CUDA® Deep Neural Network library (**[cuDNN](https://developer.nvidia.com/cudnn)**) is a GPU-accelerated library of primitives for deep neural networks. cuDNN provides highly tuned implementations for standard routines such as forward and backward convolution, pooling, normalization, and activation layers. cuDNN is part of the NVIDIA Deep Learning SDK.
 

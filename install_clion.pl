@@ -10,7 +10,7 @@ use warnings;
 use feature qw(say);
 use LWP::Simple;
 sub AddFavorite($){
-	my @arr=`lsb_release -a` =~ /^Release:\s+(.+)$/m;
+	my @arr=`lsb_release -a  2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 	my $desktop="";
 	my $path="";
 	if($arr[0] eq "18.04"){
@@ -28,9 +28,10 @@ sub AddFavorite($){
 die "Please run as not superuser" if($<==0);
 #Download CLION
 
-my $url="https://www.jetbrains.com/clion/whatsnew/";
+my $url="https://confluence.jetbrains.com/display/CLION/Release+notes";
 my $html = get($url);
-my @version = $html =~ m!(CLion [0-9\.]+)!;
+my @version = $html =~ m!(CLion [0-9\.]+)!g;
+@version=reverse sort @version;
 my $version = substr($version[0],6,length($version[0])-6);
 
 chdir "/tmp/";
@@ -73,6 +74,3 @@ EOF
 print FP $data;
 close FP;
 system "curl -L https://ucarecdn.com/bc9fb611-4353-481a-b6a6-35a6337c8451/ -o /opt/clion.png";
-
-
-
