@@ -133,12 +133,6 @@ It will make english name directory at home directory. Because, Some library or 
 
 **[MATLAB](https://kr.mathworks.com/products/matlab.html)** (matrix laboratory) is a multi-paradigm numerical computing environment. A proprietary programming language developed by MathWorks, MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages, including C, C++, C#, Java, Fortran and Python.
 
-### <img src="http://i63.tinypic.com/205oxua.png" width="64">Nana
-
-<img src="http://i68.tinypic.com/f0n7mv.png" height="20">
-
-**[Nana](http://nanapro.org/en-us/)** is a cross-platform library for GUI programming in modern C++ style.
-
 ### <img src="http://i65.tinypic.com/2cn8qzc.png" width="64">Neofetch
 
 <img src="http://i68.tinypic.com/f0n7mv.png" height="20">

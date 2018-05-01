@@ -13,7 +13,7 @@ die "Please run as not superuser" if($<==0);
 system "sudo add-apt-repository ppa:graphics-drivers/ppa -y";
 system "sudo apt-get update";
 system "sudo apt-get install nvidia-390 -y";
-#Last check date : 2018.03.30
+#Last check date : 2018.05.01
 system "sudo reboot";
 __DATA__
 Support List
