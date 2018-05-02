@@ -169,7 +169,7 @@ gcc <...> -lopenblas
 gcc <...> `pkg-config --libs openblas`
 ```
 
-There is a example code in [tests/openblas_test.c](tests/OpenBLAS_Tests).
+There is a example code in [tests/openblas_test.c](tests/openblas_test.c).
 
 ### <img src="http://i65.tinypic.com/291oodu.png" width="64">OpenCV
 
