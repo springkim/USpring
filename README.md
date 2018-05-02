@@ -34,9 +34,9 @@ Ubuntu for Desktop
 
 <img src="http://i68.tinypic.com/f0n7mv.png" height="20">
 
-This script will install **git** ,**gcc**, **g++** , **fpc** , **python3** , **vim** , **inkscape** , **cmake** , **gparted** , **exfat-utils** , **exfat-fuse** and **Royal-GTK-Theme** , **Numix-Icon** . And installing some dependencies for other scripts.
+This script will install **git** ,**gcc**, **g++** , **fpc** , **python3** , **vim** , **inkscape** , **cmake** , **gparted** , **exfat-utils** , **exfat-fuse** and **Royal-GTK-Theme for 16.04** ,**Snow-Theme for 18.04**, **Numix-Icon** . And installing some dependencies for other scripts.
 
-<img src="http://i65.tinypic.com/250v71f.png" width="512">
+<img src="http://i65.tinypic.com/250v71f.png" height="240"><img src="https://i.imgur.com/9ZjsK1p.png" height="240">
 
 ### <img src="http://i66.tinypic.com/2cpca6a.png" width="64">Apache2
 
@@ -82,13 +82,13 @@ You can select performance mode(set to highest clock) and powersave mode(normal)
 
 ### <img src="http://i63.tinypic.com/kdwj1x.png" width="64">CUDA
 
-<img src="http://i67.tinypic.com/16hiyph.png" height="20">
+<img src="https://imgur.com/vFQqJJK.png" height="20">
 
 **[CUDA](https://developer.nvidia.com/cuda-downloads)** is a parallel computing platform and programming model developed by NVIDIA for general computing on graphical processing units (GPUs). With CUDA, developers are able to dramatically speed up computing applications by harnessing the power of GPUs.
 
 ### <img src="http://i66.tinypic.com/2wc343k.png" width="64">CUDNN
 
-<img src="http://i63.tinypic.com/rh8pz8.png" height="20">
+<img src="https://imgur.com/cQTaIyg.png" height="20">
 
 The NVIDIA CUDA® Deep Neural Network library (**[cuDNN](https://developer.nvidia.com/cudnn)**) is a GPU-accelerated library of primitives for deep neural networks. cuDNN provides highly tuned implementations for standard routines such as forward and backward convolution, pooling, normalization, and activation layers. cuDNN is part of the NVIDIA Deep Learning SDK.
 
@@ -97,6 +97,12 @@ The NVIDIA CUDA® Deep Neural Network library (**[cuDNN](https://developer.nvidi
 <img src="http://i66.tinypic.com/34y9yef.png" height="20">
 
 Mozilla **[Firefox](https://www.mozilla.org/ko/firefox/new/)** (or simply Firefox) is a free and open-source web browser developed by Mozilla Foundation and its subsidiary, Mozilla Corporation. Firefox-56 is the latest version before Quantum. Quantum not support multirow-tab and multirow-bookmark. so i still use firefox56.
+
+### <img src="https://imgur.com/gNZSEkS.png" width="64">Hancom-Viewer
+
+<img src="http://i68.tinypic.com/f0n7mv.png" height="20">
+
+**[Hancom-viewer](http://www.hancom.com/cs_center/csDownload.do)** reads only for hwp files.
 
 ### <img src="http://i65.tinypic.com/2rqlnie.png" width="64">Haroopad
 
@@ -117,7 +123,9 @@ Capture region and upload : Ctrl+Shift+R
 
 ### <img src="http://i66.tinypic.com/14jyhi0.png" width="64">Java
 
-<img src="http://i67.tinypic.com/2enq982.png" height="20">
+<img src="https://imgur.com/u28YUJm.png" height="20"> for ubuntu 16.04
+
+<img src="https://imgur.com/0uu4VcL.png" height="20"> for ubuntu 18.04
 
 Java is a general-purpose computer-programming language that is concurrent, class-based, object-oriented and specifically designed to have as few implementation dependencies as possible.
 
@@ -144,6 +152,24 @@ It will make english name directory at home directory. Because, Some library or 
 <img src="http://i64.tinypic.com/axfrtk.png" height="20">
 
 This is NVIDIA Graphic driver. It will restart automatically after installation.
+
+### <img src="https://imgur.com/At0ulLc.png" width="64">OpenBLAS
+
+<img src="http://i68.tinypic.com/f0n7mv.png" height="20">
+
+**[OpenBLAS](http://www.openblas.net/)** is an optimized BLAS library based on GotoBLAS2 1.13 BSD version. Usually we use BLAS for Matrix Multiplication in C. C++ has [Eigen](eigen.tuxfamily.org/) and Python has numpy.
+
+Likewise library link command is in cblas.h. You just need to include. and if you are using gcc then link below command.
+
+```bash
+gcc <...> -lopenblas
+```
+
+```bash
+gcc <...> `pkg-config --libs openblas`
+```
+
+There is a example code in [tests/OpenBLAS_Tests](tests/OpenBLAS_Tests).
 
 ### <img src="http://i65.tinypic.com/291oodu.png" width="64">OpenCV
 

@@ -26,7 +26,7 @@ sub AddFavorite($){
 #Check root
 die "Please run as not superuser" if($<==0);
 chdir "/tmp/";
-system "sudo apt-get install clang-format -y";
+system "sudo apt-get install clang-format uncrustify -y";
 system "curl -L https://atom.io/download/deb -o atom.deb";
 system "sudo gdebi atom.deb -n";
 unlink "atom.deb";

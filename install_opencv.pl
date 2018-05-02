@@ -1,3 +1,10 @@
+#!/usr/bin/perl
+#  Desktop/install_opencv.pl
+#  USpring
+#
+#  Created by kimbom on 2018. 04. 20...
+#  Copyright 2018 kimbom. All rights reserved.
+#
 use strict;
 use warnings;
 use feature qw/say/;
@@ -6,7 +13,8 @@ use File::Find qw/finddepth/;
 use File::Path qw/mkpath/;
 use File::Copy;
 use List::MoreUtils qw/first_index/;
-
+#Check root
+die "Please run as not superuser" if($<==0);
 my $requirements="sudo apt-get install -y
 curl
 git
