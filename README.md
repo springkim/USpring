@@ -214,3 +214,9 @@ It automatically select right header for compiler.
 <img src="http://i68.tinypic.com/f0n7mv.png" height="20">
 
 **[TeamViewer](www.teamviewer.com)** is a proprietary computer software package for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.
+
+### <img src="https://imgur.com/HuDjvgI.png" width="64">Vmware-Player
+
+<img src="http://i68.tinypic.com/f0n7mv.png" height="20">
+
+VMware Workstation is a hosted hypervisor that runs on x64 versions of Windows and Linux operating systems
