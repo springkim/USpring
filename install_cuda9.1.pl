@@ -1,8 +1,8 @@
 #!/usr/bin/perl
-#  Desktop/install_cuda8.0.pl
+#  Desktop/install_cuda9.1.pl
 #  USpring
 #
-#  Created by kimbom on 2018. 02. 09...
+#  Created by kimbom on 2018. 05. 08...
 #  Copyright 2018 kimbom. All rights reserved.
 #
 use strict;
@@ -28,6 +28,8 @@ if($arr[0] eq "18.04"){
 	close FP;
 	system "sudo chmod 644 /usr/include/crt/host_config.h";
 }elsif($arr[0] eq "16.04"){
+	#Remove other cuda
+	system "sudo apt-get remove cuda-* -y";
 	#Install dependencies
 	system 'sudo apt-get install linux-headers-$(uname -r)';
 	system "sudo apt-get install curl -y";

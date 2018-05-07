@@ -11,7 +11,11 @@ use feature qw(say);
 #Check root
 die "Please run as not superuser" if($<==0);
 my @arr=`lsb_release -a  2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
-if($arr[0] eq "16.04"){
+if($arr[0] eq "18.04"){
+	die "Can not install cuda9.0 on ubuntu 18.04\n";
+}elsif($arr[0] eq "16.04"){
+	#Remove other cuda
+	system "sudo apt-get remove cuda-* -y";
 	#Install dependencies
 	system 'sudo apt-get install linux-headers-$(uname -r)';
 	system "sudo apt-get install curl -y";
