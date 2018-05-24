@@ -11,6 +11,7 @@ use feature qw/say/;
 #Check root
 die "Please run as not superuser" if($<==0);
 chdir "/tmp/";
+system "sudo apt-get install gfortran -y";
 system "sudo rm -r build_openblas" if(-d "build_openblas");
 mkdir "build_openblas";
 chdir "build_openblas";

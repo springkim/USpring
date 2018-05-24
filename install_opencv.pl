@@ -46,6 +46,7 @@ python-numpy
 python3-numpy
 python-pip
 python3-pip
+mercurial
 ";
 my @arr=`lsb_release -a  2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 if($arr[0] eq "16.04"){
@@ -82,7 +83,7 @@ chdir "opencv";
 `unzip opencv-2*`;
 `unzip opencv-3*`;
 `unzip opencv_contrib-3*`;
-`git clone https://github.com/RLovelett/eigen`;
+`hg clone https://bitbucket.org/eigen/eigen/`;
 `rm *.zip`;
 mkdir "build2";
 mkdir "build3";
