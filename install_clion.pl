@@ -32,10 +32,17 @@ my $url="https://confluence.jetbrains.com/display/CLION/Release+notes";
 my $html = get($url);
 my @version = $html =~ m!(CLion [0-9\.]+)!g;
 @version=reverse sort @version;
-my $version = substr($version[0],6,length($version[0])-6);
-
+@version = do { my %seen; grep { !$seen{$_}++ } @version };
 chdir "/tmp/";
-system "curl -L https://download.jetbrains.com/cpp/CLion-$version.tar.gz -o clion.tar.gz";
+my $idx=0;
+my $version;
+while(1){
+    $version = substr($version[$idx],6,length($version[$idx])-6);
+    system "curl -L https://download.jetbrains.com/cpp/CLion-$version.tar.gz -o clion.tar.gz";
+    my $sz = -s "clion.tar.gz";
+    last if($sz > 1000);
+    $idx++;
+}
 system "tar xzvf clion.tar.gz";
 system "mkdir ~/Program" unless(-d "$ENV{'HOME'}/Program");
 system "mv clion-$version ~/Program/";
