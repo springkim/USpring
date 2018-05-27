@@ -82,7 +82,7 @@ You can select performance mode(set to highest clock) and powersave mode(normal)
 
 ### <img src="http://i63.tinypic.com/kdwj1x.png" width="64">CUDA
 
-<img src="https://i.imgur.com/KqRY1G8.png" height="20"><img src="https://i.imgur.com/BCC1yEF.png" height="20"><img src="https://i.imgur.com/iY2RBqG.png" height="20">
+<img src="https://i.imgur.com/KqRY1G8.png" height="20"><img src="https://i.imgur.com/BCC1yEF.png" height="20">
 
 **[CUDA](https://developer.nvidia.com/cuda-downloads)** is a parallel computing platform and programming model developed by NVIDIA for general computing on graphical processing units (GPUs). With CUDA, developers are able to dramatically speed up computing applications by harnessing the power of GPUs.
 

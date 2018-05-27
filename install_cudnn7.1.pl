@@ -29,18 +29,11 @@ if($ver eq "9.1"){
 	die "No cuda";
 }
 system "tar xvzf cudnn.tgz";
-my @arr=`lsb_release -a 2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
-if($arr[0] eq "18.04"){
-	system "sudo cp -P cuda/include/cudnn.h /usr/include";
-	system "sudo cp -P cuda/lib64/libcudnn* /usr/lib/x86_64-linux-gnu/";
-	system "sudo chmod a+r /usr/include/cudnn.h /usr/lib/x86_64-linux-gnu/libcudnn*";
-}elsif($arr[0] eq "16.04"){
-	system "sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include";
-	system "sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64";
-	system "sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*";
-}else{
-	die "No matched ubuntu version!";
-}
+
+system "sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include";
+system "sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64";
+system "sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*";
+
 #Remove all install files.
 unlink "cudnn.tgz";
 system "sudo rm -r cuda";
