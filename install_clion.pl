@@ -2,8 +2,8 @@
 #  Desktop/install_clion.pl
 #  USpring
 #
-#  Created by kimbom on 2018. 02. 09...
-#  Copyright 2018 kimbom. All rights reserved.
+#  Created by kimbomm on 2018. 02. 09...
+#  Copyright 2018 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;
@@ -47,7 +47,7 @@ system "tar xzvf clion.tar.gz";
 system "mkdir ~/Program" unless(-d "$ENV{'HOME'}/Program");
 system "mv clion-$version ~/Program/";
 
-system "curl -L https://www.dropbox.com/s/u3gav8tcwxdxnfu/settings.jar?dl=1 -o $ENV{'HOME'}/Program/clion-$version/settings.jar";
+system "curl -L https://github.com/springkim/USpring/releases/download/bin/clion_settings.jar -o $ENV{'HOME'}/Program/clion-$version/settings.jar";
 system "rm clion.tar.gz";
 system "sudo ln -s ~/Program/clion-$version/bin/clion.sh /usr/bin/clion";
 #Create desktop shortcut

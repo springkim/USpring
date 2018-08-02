@@ -20,11 +20,11 @@ system "sudo apt-get install libcupti-dev -y";
 chdir "/tmp/";
 my $ver=GetCudaVersion;
 if($ver eq "9.1"){
-	system "curl -L https://www.dropbox.com/s/5r924r5qdq3w6i6/cudnn-9.1-linux-x64-v7.1.tgz?dl=1 -o cudnn.tgz";
+	system "curl -L https://github.com/springkim/USpring/releases/download/cudnn7%2C1/cudnn-9.1-linux-x64-v7.1.tgz -o cudnn.tgz";
 }elsif($ver eq "9.0"){
-	system "curl -L https://www.dropbox.com/s/qgo9ifbocn0eipn/cudnn-9.0-linux-x64-v7.1.tgz?dl=1 -o cudnn.tgz";
+	system "curl -L https://github.com/springkim/USpring/releases/download/cudnn7%2C1/cudnn-9.0-linux-x64-v7.1.tgz -o cudnn.tgz";
 }elsif($ver eq "8.0"){
-	system "curl -L https://www.dropbox.com/s/k23au6nxeob1xks/cudnn-8.0-linux-x64-v7.1.tgz?dl=1 -o cudnn.tgz";
+	system "curl -L https://github.com/springkim/USpring/releases/download/cudnn7%2C1/cudnn-8.0-linux-x64-v7.1.tgz -o cudnn.tgz";
 }else{
 	die "No cuda";
 }

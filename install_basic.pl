@@ -2,8 +2,8 @@
 #  Desktop/install_basic.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 11. 02...
-#  Copyright 2017 kimbom. All rights reserved.
+#  Created by kimbomm on 2017. 11. 02...
+#  Copyright 2017 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;
@@ -32,7 +32,7 @@ my @arr=`lsb_release -a  2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 if($arr[0] eq "18.04"){
 	system "sudo apt install gnome-tweak-tool -y";
 	system "mkdir ~/.themes" unless(-d "~/.themes");
-	system "curl -L https://www.dropbox.com/s/j52tq5co6hyhwjc/Snow.tar.xz?dl=1 -o ~/.themes/Snow.tar.xz";
+	system "curl -L https://github.com/springkim/USpring/releases/download/18.04/Snow.tar.xz -o ~/.themes/Snow.tar.xz";
 	system "cd ~/.themes/ && tar -xvf Snow.tar.xz";
 	system "gsettings set org.gnome.desktop.interface gtk-theme Snow";
 	system "gsettings set org.gnome.desktop.interface icon-theme Numix-Circle-Light";

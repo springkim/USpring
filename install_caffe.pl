@@ -2,8 +2,8 @@
 #  Desktop/install_caffe.pl
 #  USpring
 #
-#  Created by kimbom on 2018. 02. 09...
-#  Copyright 2018 kimbom. All rights reserved.
+#  Created by kimbomm on 2018. 02. 09...
+#  Copyright 2018 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;
@@ -41,7 +41,7 @@ system "sudo -H pip install --upgrade pip";
 #Download caffe
 chdir "/tmp/";
 system "git clone https://github.com/BVLC/caffe";
-system "curl -L https://www.dropbox.com/s/19es3odx4guhpw4/Makefile.config?dl=1 -o /tmp/caffe/Makefile.config";
+system "curl -L https://github.com/springkim/USpring/releases/download/caffe/Makefile.config -o /tmp/caffe/Makefile.config";
 #Build caffe
 chdir "caffe";
 chdir "python";

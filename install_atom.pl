@@ -2,8 +2,8 @@
 #  Desktop/install_atom.pl
 #  USpring
 #
-#  Created by kimbom on 2018. 01. 20...
-#  Copyright 2017 kimbom. All rights reserved.
+#  Created by kimbomm on 2018. 01. 20...
+#  Copyright 2017 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;

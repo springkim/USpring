@@ -2,8 +2,8 @@
 #  Desktop/install_nvidia_driver.pl
 #  USpring
 #
-#  Created by kimbom on 2018. 02. 09...
-#  Copyright 2018 kimbom. All rights reserved.
+#  Created by kimbomm on 2018. 02. 09...
+#  Copyright 2018 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;

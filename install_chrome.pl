@@ -1,4 +1,10 @@
 #!/usr/bin/perl
+#  Desktop/install_chrome.pl
+#  USpring
+#
+#  Created by kimbomm on 2018. 08. 02...
+#  Copyright 2018 kimbomm. All rights reserved.
+#
 use strict;
 use warnings;
 use feature qw(say);

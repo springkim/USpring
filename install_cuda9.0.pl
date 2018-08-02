@@ -2,8 +2,8 @@
 #  Desktop/install_cuda9.0.pl
 #  USpring
 #
-#  Created by kimbom on 2018. 05. 08...
-#  Copyright 2018 kimbom. All rights reserved.
+#  Created by kimbomm on 2018. 05. 08...
+#  Copyright 2018 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;
@@ -12,9 +12,9 @@ use feature qw(say);
 die "Please run as not superuser" if($<==0);
 #Install CUDA9.0
 #[16.04][18.04]
-my @cuda_url=("https://www.dropbox.com/s/x3w7kzz4nquw395/cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb?dl=1","https://www.dropbox.com/s/hc5v9lnz0l0xlp9/cuda-repo-ubuntu1704-9-0-local_9.0.176-1_amd64.deb?dl=1");
-my @cuda_patch1_url=("https://www.dropbox.com/s/dozyo9r314kfgpr/cuda-repo-ubuntu1704-9-0-local-cublas-performance-update_1.0-1_amd64.deb?dl=1","https://www.dropbox.com/s/5fpwlvnc5pq0mno/cuda-repo-ubuntu1604-9-0-local-cublas-performance-update_1.0-1_amd64.deb?dl=1");
-my @cuda_patch2_url=("https://www.dropbox.com/s/wbt5w1ow8p99up3/cuda-repo-ubuntu1704-9-0-local-cublas-performance-update-2_1.0-1_amd64.deb?dl=1","https://www.dropbox.com/s/91xs4fcox19mth7/cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-2_1.0-1_amd64.deb?dl=1");
+my @cuda_url=("https://github.com/springkim/USpring/releases/download/16.04/cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb","https://github.com/springkim/USpring/releases/download/18.04/cuda-repo-ubuntu1704-9-0-local_9.0.176-1_amd64.deb");
+my @cuda_patch1_url=("https://github.com/springkim/USpring/releases/download/16.04/cuda-repo-ubuntu1604-9-0-local-cublas-performance-update_1.0-1_amd64.deb","https://github.com/springkim/USpring/releases/download/18.04/cuda-repo-ubuntu1704-9-0-local-cublas-performance-update_1.0-1_amd64.deb");
+my @cuda_patch2_url=("https://github.com/springkim/USpring/releases/download/16.04/cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-2_1.0-1_amd64.deb","https://github.com/springkim/USpring/releases/download/18.04/cuda-repo-ubuntu1704-9-0-local-cublas-performance-update-2_1.0-1_amd64.deb");
 my @arr=`lsb_release -a 2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 
 my $veridx=-1;

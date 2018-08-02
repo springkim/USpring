@@ -2,8 +2,8 @@
 #  Desktop/install_imgur_screen_shot.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 08. 25...
-#  Copyright 2017 kimbom. All rights reserved.
+#  Created by kimbomm on 2017. 08. 25...
+#  Copyright 2017 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;
@@ -35,8 +35,8 @@ system "gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybin
 system "gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \"$key\'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom144/\']\"";
 
 
-system "sudo wget https://www.dropbox.com/s/v1zzjb6snjgvs9f/imgur-screenshot.sh?dl=1 -O /usr/bin/imgur-screenshot.sh";
-system "sudo wget https://www.dropbox.com/s/81sj0cye7d57akn/imgur-screenshot-w.sh?dl=1 -O /usr/bin/imgur-screenshot-w.sh";
+system "sudo wget https://github.com/springkim/USpring/releases/download/bin/imgur-screenshot.sh -O /usr/bin/imgur-screenshot.sh";
+system "sudo wget https://github.com/springkim/USpring/releases/download/bin/imgur-screenshot-w.sh -O /usr/bin/imgur-screenshot-w.sh";
 system "sudo chmod +x /usr/bin/imgur-screenshot.sh";
 system "sudo chmod +x /usr/bin/imgur-screenshot-w.sh";
 system "mkdir ~/Pictures";
@@ -44,6 +44,3 @@ say "========================================";
 say "Capture Window and upload : Ctrl + SHift + W";
 say "Capture Region and upload : Ctrl + SHift + R";
 say "========================================";
-
-
-

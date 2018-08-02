@@ -2,8 +2,8 @@
 #  install_powersave.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 03. 30...
-#  Copyright 2018 kimbom. All rights reserved.
+#  Created by kimbomm on 2017. 03. 30...
+#  Copyright 2018 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;

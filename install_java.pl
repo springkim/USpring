@@ -2,8 +2,8 @@
 #  Desktop/install_java.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 08. 22...
-#  Copyright 2017 kimbom. All rights reserved.
+#  Created by kimbomm on 2017. 08. 22...
+#  Copyright 2017 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;

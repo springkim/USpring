@@ -2,8 +2,8 @@
 #  Desktop/install_matlab.pl
 #  USpring
 #
-#  Created by kimbom on 2018. 02. 09...
-#  Copyright 2018 kimbom. All rights reserved.
+#  Created by kimbomm on 2018. 02. 09...
+#  Copyright 2018 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;
@@ -69,4 +69,3 @@ system "wget https://www.dropbox.com/s/p2nao4jlcesj4sr/matlab.png?dl=0 -O /opt/m
 my $desktop="application://matlab.desktop";
 my $cmd=`gsettings get com.canonical.Unity.Launcher favorites | sed s/]/,/`;
 system "gsettings set com.canonical.Unity.Launcher favorites \"$cmd \'$desktop\']\"";
-

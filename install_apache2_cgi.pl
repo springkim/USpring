@@ -2,8 +2,8 @@
 #  install_apache2_cgi.pl
 #  USpring
 #
-#  Created by kimbom on 2017. 08. 05...
-#  Copyright 2017 Sogang CVIP lab. All rights reserved.
+#  Created by kimbomm on 2017. 08. 05...
+#  Copyright 2017 kimbomm All rights reserved.
 #
 
 use strict;
@@ -43,7 +43,7 @@ chomp($root_dir);
 print "email : ";
 my $email=<STDIN>;
 chomp($email);
-my $doc=do{  
+my $doc=do{
     local $/=undef;
     open FP,"<","/etc/apache2/sites-enabled/000-default.conf" or die "$!\n";
     <FP>;
@@ -54,8 +54,8 @@ $doc=~s/#ServerName www\.example\.com/ServerName $ip_address/;
 $doc=~s/\/var\/www\/html/\/var\/www\/$root_dir/;
 #change email
 my $append_element="
-	ScriptAlias /$root_dir/ /var/www/$root_dir/  
-	<Directory \"/var/www/$root_dir\">  
+	ScriptAlias /$root_dir/ /var/www/$root_dir/
+	<Directory \"/var/www/$root_dir\">
                 AllowOverride None
                 Options  +ExecCGI -MultiViews +SymLinksIfOwnerMatch
                 AddHandler cgi-script .cgi .pl
@@ -82,12 +82,12 @@ $doc2=~s/#ServerRoot/ServerRoot/;
 
 #/etc/apache2/apache2.conf line 164 replace
 my $append_element2="
-<Directory /var/www/$root_dir/>  
+<Directory /var/www/$root_dir/>
          Options FollowSymLinks ExecCGI MultiViews
          AddHandler cgi-script .cgi .pl
          AllowOverride None
          Require all granted
-</Directory>  
+</Directory>
 ";
 $doc2=~s/<Directory \/var\/www\/>.+<\/Directory>/$append_element2/s;
 $doc2.="\nServerName http://localhost";
