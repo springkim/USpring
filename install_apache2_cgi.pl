@@ -49,7 +49,7 @@ my $doc=do{
     <FP>;
 };
 #change ServerName
-$doc=~s/#ServerName www\.example\.com/ServerName $ip_address/;
+$doc=~s/#ServerName www\.example\.com/ServerName localhost/;
 #change root directory
 $doc=~s/\/var\/www\/html/\/var\/www\/$root_dir/;
 #change email
