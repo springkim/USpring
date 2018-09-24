@@ -23,16 +23,15 @@ $veridx=1 if($arr[0] eq "18.04");
 
 #Remove other cuda
 system "sudo apt-get remove cuda-* -y";
-#Download & Install CUDA-9.1
+#Download & Install CUDA-9.0
 system 'sudo apt-get install linux-headers-$(uname -r)' if($arr[0] eq "16.04");
 system "sudo apt-get install curl -y";
 chdir "/tmp/";
 system "curl -L $cuda_url[$veridx] -o /tmp/cuda.deb";
 system "sudo dpkg -i cuda.deb";
 system "sudo apt-key add /var/cuda-repo-9.0/7fa2af80.pub" if($arr[0] eq "18.04");
-system "sudo apt-get update -y";
-system "sudo apt-get install cuda -y";
 unlink "cuda.deb";
+
 #Download & Install Patch 1 (Released Jan 25, 2018)
 system "curl -L $cuda_patch1_url[$veridx] -o cuda-patch1.deb";
 system "sudo dpkg -i cuda-patch1.deb";
@@ -41,8 +40,13 @@ unlink "cuda-patch1.deb";
 #Download & Install Patch 2 (Released Mar 5, 2018)
 system "curl -L $cuda_patch2_url[$veridx] -o cuda-patch2.deb";
 system "sudo dpkg -i cuda-patch2.deb";
+system "sudo apt-key add /var/cuda-repo-9-0-local-cublas-performance-update-2/7fa2af80.pub" if($arr[0] eq "18.04");
+system "sudo apt-get update -y";
 unlink "cuda-patch2.deb";
 
+##Install CUDA9.0
+system "sudo apt-get update -y";
+system "sudo apt-get install cuda -y";
 #Link cuda directories
 open FP,">>",$ENV{"HOME"}."/.bashrc";
 print FP "\n\n";

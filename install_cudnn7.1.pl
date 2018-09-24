@@ -20,19 +20,26 @@ system "sudo apt-get install libcupti-dev -y";
 chdir "/tmp/";
 my $ver=GetCudaVersion;
 if($ver eq "9.1"){
-	system "curl -L https://github.com/springkim/USpring/releases/download/cudnn7%2C1/cudnn-9.1-linux-x64-v7.1.tgz -o cudnn.tgz";
+	system "curl -L https://github.com/springkim/USpring/releases/download/cudnn/cudnn-9.1-linux-x64-v7.1.tgz -o cudnn.tgz";
 }elsif($ver eq "9.0"){
-	system "curl -L https://github.com/springkim/USpring/releases/download/cudnn7%2C1/cudnn-9.0-linux-x64-v7.1.tgz -o cudnn.tgz";
+	system "curl -L https://github.com/springkim/USpring/releases/download/cudnn/cudnn-9.0-linux-x64-v7.1.tgz -o cudnn.tgz";
 }elsif($ver eq "8.0"){
-	system "curl -L https://github.com/springkim/USpring/releases/download/cudnn7%2C1/cudnn-8.0-linux-x64-v7.1.tgz -o cudnn.tgz";
+	system "curl -L https://github.com/springkim/USpring/releases/download/cudnn/cudnn-8.0-linux-x64-v7.1.tgz -o cudnn.tgz";
 }else{
 	die "No cuda";
 }
 system "tar xvzf cudnn.tgz";
 
-system "sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include";
-system "sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64";
-system "sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*";
+if(-d '/usr/local/cuda/include'){
+	system "sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include";
+	system "sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64";
+	system "sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*";
+}else{
+	system "sudo cp -P cuda/include/cudnn.h /usr/include";
+	system "sudo cp -P cuda/lib64/libcudnn* /usr/bin";
+	system "sudo chmod a+r /usr/include/cudnn.h /usr/bin/libcudnn*";
+}
+
 
 #Remove all install files.
 unlink "cudnn.tgz";

@@ -43,6 +43,8 @@ while(1){
     last if($sz > 1000);
     $idx++;
 }
+say "Latest version of CLion is $version";
+
 system "tar xzvf clion.tar.gz";
 system "mkdir ~/Program" unless(-d "$ENV{'HOME'}/Program");
 system "mv clion-$version ~/Program/";

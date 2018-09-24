@@ -28,6 +28,7 @@ sub AddFavorite($){
 die "Please run as not superuser" if($<==0);
 system "sudo ls >/tmp/nul";
 #Download haroopad
+system "sudo apt -y install libgconf2-4";
 chdir "/tmp/";
 
 my $url="https://bitbucket.org/rhiokim/haroopad-download/downloads/";
