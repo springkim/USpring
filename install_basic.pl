@@ -42,7 +42,7 @@ if($arr[0] eq "18.04"){
 	system "sudo apt-get install uim -y";
 	system "im-config -n uim";
 
-}else{	#16.04
+}elsif($arr[0] eq "16.04"){	#16.04
 	system "sudo add-apt-repository ppa:snwh/pulp -y";
 	system "sudo add-apt-repository ppa:noobslab/themes -y";
 	system "sudo apt-get update";
