@@ -8,11 +8,12 @@
 use strict;
 use warnings;
 use feature qw(say);
+use LWP::Simple;
 sub AddFavorite($){
 	my @arr=`lsb_release -a 2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 	my $desktop="";
 	my $path="";
-	if($arr[0] eq "18.04"){
+	if(int($arr[0]) > 18.04){
 		$desktop=shift;
 		$path="org.gnome.shell favorite-apps";
 	}else{
@@ -26,11 +27,16 @@ sub AddFavorite($){
 #Check root
 die "Please run as not superuser" if($<==0);
 #Install dependencies
-system "sudo apt-get install flashplugin-installer -y";
+system "sudo apt-get install flashplugin-installer curl -y";
+#Verify latest version
+my $url="https://www.waterfox.net/releases/";
+my $html = get($url);
+my @url = $html =~ m!(https://[\w\.\-/]+waterfox-56[\w\.\-/]+\.tar\.bz2)!;
+print $url[0],"\n";
 #Download firefox
 chdir "/tmp/";
 rmdir "waterfox";
-system "curl -L https://storage-waterfox.netdna-ssl.com/releases/linux64/installer/waterfox-56.2.3.en-US.linux-x86_64.tar.bz2 -o waterfox.tar.bz2";
+system "curl -L $url[0] -o waterfox.tar.bz2";
 system "bzip2 -d waterfox.tar.bz2";
 system "tar -xvf waterfox.tar";
 unlink "waterfox.tar";
@@ -68,4 +74,4 @@ EOF
 ;
 print FP $data;
 close FP;
-system "curl -L http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/waterfox-icon.png -o /opt/waterfox.png";
+system "curl -L https://www.waterfox.net/touch-icon.png -o /opt/waterfox.png";

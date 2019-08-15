@@ -13,7 +13,7 @@ sub AddFavorite($){
 	my @arr=`lsb_release -a 2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 	my $desktop="";
 	my $path="";
-	if($arr[0] eq "18.04"){
+	if(int($arr[0]) > 18.04){
 		$desktop=shift;
 		$path="org.gnome.shell favorite-apps";
 	}else{
@@ -28,7 +28,13 @@ sub AddFavorite($){
 die "Please run as not superuser" if($<==0);
 system "sudo ls >/tmp/nul";
 #Download haroopad
-system "sudo apt -y install libgconf2-4";
+
+my @arr=`lsb_release -a  2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
+if(int($arr[0]) >= "19.04"){
+	system "sudo apt -y install libgconf-2-4";
+}else{
+	system "sudo apt -y install libgconf2-4";
+}
 chdir "/tmp/";
 
 my $url="https://bitbucket.org/rhiokim/haroopad-download/downloads/";
