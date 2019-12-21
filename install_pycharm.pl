@@ -50,7 +50,7 @@ Name=PyCharm
 Comment=IDE
 Icon=/opt/pycharm.png
 Exec=pycharm
-Terminal=true
+Terminal=false
 Categories=IDE
 EOF
 ;
