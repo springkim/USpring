@@ -2,8 +2,8 @@
 #  Desktop/install_waterfox.pl
 #  USpring
 #
-#  Created by kimbomm on 2018. 09. 19...
-#  Copyright 2018 kimbomm. All rights reserved.
+#  Created by kimbomm on 2019. 12. 21...
+#  Copyright 2019 kimbomm. All rights reserved.
 #
 use strict;
 use warnings;
@@ -31,7 +31,8 @@ system "sudo apt-get install flashplugin-installer curl -y";
 #Verify latest version
 my $url="https://www.waterfox.net/releases/";
 my $html = get($url);
-my @url = $html =~ m!(https://[\w\.\-/]+waterfox-56[\w\.\-/]+\.tar\.bz2)!;
+#https://storage-waterfox.netdna-ssl.com/releases/linux64/installer/waterfox-classic-2019.12.en-US.linux-x86_64.tar.bz2
+my @url = $html =~ m!(https://[\w\.\-/]+waterfox-classic[\w\.\-/]+\.tar\.bz2)!;
 print $url[0],"\n";
 #Download firefox
 chdir "/tmp/";
@@ -40,10 +41,10 @@ system "curl -L $url[0] -o waterfox.tar.bz2";
 system "bzip2 -d waterfox.tar.bz2";
 system "tar -xvf waterfox.tar";
 unlink "waterfox.tar";
-chdir "waterfox";
+chdir "waterfox-classic";
 system "sudo cp -R * /usr/bin/";
 chdir "..";
-system "sudo rm -r waterfox";
+system "sudo rm -r waterfox-classic";
 #Create desktop shortcut
 my $data=do{
     local $/=undef;
