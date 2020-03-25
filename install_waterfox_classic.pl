@@ -9,21 +9,10 @@ use strict;
 use warnings;
 use feature qw(say);
 use LWP::Simple;
-sub AddFavorite($){
-	my @arr=`lsb_release -a 2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
-	my $desktop="";
-	my $path="";
-	if(int($arr[0]) > 18.04){
-		$desktop=shift;
-		$path="org.gnome.shell favorite-apps";
-	}else{
-		$desktop="application://".shift;
-		$path="com.canonical.Unity.Launcher favorites";
-	}
-	my $cmd=`gsettings get $path | sed s/]/,/`;
-	chomp($cmd);
-	system "gsettings set $path \"$cmd \'$desktop\']\"";
-}
+use FindBin qw($RealBin);   # Directory in which the script lives
+use lib "$RealBin/lib";  # Where modules are, relative to $RealBin
+require 'lib_dock.pl';
+
 #Check root
 die "Please run as not superuser" if($<==0);
 #Install dependencies
@@ -56,16 +45,18 @@ print FP $data;
 close FP;
 system "sudo perl $tmpfile";
 unlink $tmpfile;
-AddFavorite "waterfox.desktop";
+#Create desktop shortcut
+AddDockIcon("waterfox-classic.desktop");
+system "gnome-shell --replace & disown";
 __DATA__
 use strict;
 use warnings;
-open FP,">","/usr/share/applications/waterfox.desktop" or die "$!\n";
+open FP,">","/usr/share/applications/waterfox-classic.desktop" or die "$!\n";
 my $data=<<EOF
 [Desktop Entry]
 Type=Application
-GenericName=waterfox
-Name=waterfox
+GenericName=waterfox-classic
+Name=waterfox-classic
 Comment=Internet
 Icon=/opt/waterfox.png
 Exec=waterfox
@@ -75,4 +66,4 @@ EOF
 ;
 print FP $data;
 close FP;
-system "curl -L https://www.waterfox.net/touch-icon.png -o /opt/waterfox.png";
+system "curl -L https://github.com/springkim/USpring/releases/download/icon/waterfox.png -o /opt/waterfox.png";

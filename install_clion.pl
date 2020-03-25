@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-#  Desktop/install_pycharm.pl
+#  Desktop/install_clion.pl
 #  USpring
 #
 #  Created by kimbomm on 2020. 02. 22...
@@ -16,50 +16,50 @@ require 'lib_dock.pl';
 
 #Check root
 die "Please run as not superuser" if($<==0);
-#Select pycharm tar.gz file
+#Select CLion tar.gz file
 my $result=`zenity --file-selection --file-filter='Tar.gz files (tar.gz) | *.tar.gz'`;
-die "Please select pycharm file" if($result eq "");
+die "Please select clion file" if($result eq "");
 print($result);
 system "tar xzvf $result";
 system "mkdir ~/Program" unless(-d "$ENV{'HOME'}/Program");
-system "rm -r ~/Program/pycharm-*";
-system "mv pycharm-* ~/Program/";
-system "sudo rm /usr/bin/pycharm";
-system "sudo ln -s ~/Program/pycharm-*/bin/pycharm.sh /usr/bin/pycharm";
+system "rm -r ~/Program/clion-*";
+system "mv clion-* ~/Program/";
+system "sudo rm /usr/bin/clion";
+system "sudo ln -s ~/Program/clion-*/bin/clion.sh /usr/bin/clion";
 
-system "curl -L https://github.com/springkim/USpring/releases/download/icon/pycharm.png -o ~/Program/pycharm-*/bin/pycharm.png";
-system "curl -L https://github.com/springkim/USpring/releases/download/icon/pycharm.svg -o ~/Program/pycharm-*/bin/pycharm.svg";
+system "curl -L https://github.com/springkim/USpring/releases/download/icon/clion.png -o ~/Program/clion-*/bin/clion.png";
+system "curl -L https://github.com/springkim/USpring/releases/download/icon/clion.svg -o ~/Program/clion-*/bin/clion.svg";
 
 #Create desktop shortcut
 my $data=do{
     local $/=undef;
     <DATA>;
 };
-my $tmpfile="install_pycharm.tmp.pl";
+my $tmpfile="install_clion.tmp.pl";
 open FP,">",$tmpfile;
 print FP $data;
 close FP;
 system "sudo perl $tmpfile";
 unlink $tmpfile;
-AddDockIcon("jetbrains-pycharm-ce.desktop");
+AddDockIcon("jetbrains-clion.desktop");
 system "gnome-shell --replace & disown";
-#sudo find / -name "*pycharm*" -exec rm -r {} \;
+#sudo find / -name "*clion*" -exec rm -r {} \;
 __DATA__
 use strict;
 use warnings;
-open FP,">","/usr/share/applications/jetbrains-pycharm-ce.desktop" or die "$!\n";
+open FP,">","/usr/share/applications/jetbrains-clion.desktop" or die "$!\n";
 my $data=<<EOF
 [Desktop Entry]
 Type=Application
-GenericName=pycharm
-Name=pycharm
+GenericName=CLion
+Name=CLion
 Comment=IDE
-Icon=/opt/pycharm.svg
-Exec=pycharm
+Icon=/opt/clion.svg
+Exec=clion
 Terminal=false
 Categories=IDE
 EOF
 ;
 print FP $data;
 close FP;
-system "curl -L https://github.com/springkim/USpring/releases/download/icon/pycharm.svg -o /opt/pycharm.svg";
+system "curl -L https://github.com/springkim/USpring/releases/download/icon/clion.svg -o /opt/clion.svg";

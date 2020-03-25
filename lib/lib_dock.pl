@@ -8,6 +8,7 @@
 use strict;
 use warnings;
 use feature qw(say);
+
 sub AddDockIcon($){
 	my @arr=`lsb_release -a  2> /tmp/nul` =~ /^Release:\s+(.+)$/m;
 	my $desktop="";
@@ -22,5 +23,12 @@ sub AddDockIcon($){
 	my $cmd=`gsettings get $path | sed s/]/,/`;
 	chomp($cmd);
 	system "gsettings set $path \"$cmd \'$desktop\']\"";
+}
+sub MakeDockIcon($){
+	my $filename=shift;
+	my $buffer=shift;
+	open FP,">","/usr/share/applications/$filename" or die "$!\n";
+	print FP $buffer;
+	close FP;
 }
 return 1;
