@@ -1,9 +1,9 @@
-# Fixing.....190816 ~ 1908??
+
 
 <img src="img/ubuntu.png" width="64"> <img src="img/B.png" width="64"> USpring
 ---------------------------------------------------------------------------------------------------------------------------
 
-### Ubuntu18.04, 16.04(x64) Setup Project
+### Ubuntu20.04, 18.04(x64) Setup Project
 
 You have to install `install_basic.pl` before other scripts.
 
