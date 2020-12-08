@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#  install_notepad++.pl
+#  notepad++.sh
 #  USpring
 #
 #  Created by kimbomm on 2020. 12. 07...

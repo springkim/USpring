@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#  install_cudnn.pl
+#  cudnn.sh
 #  USpring
 #
 #  Created by kimbomm on 2020. 12. 06...

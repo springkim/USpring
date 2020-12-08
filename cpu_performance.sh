@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#  install_cpu_performance.pl
+#  cpu_performance.sh
 #  USpring
 #
 #  Created by kimbomm on 2020. 12. 07...

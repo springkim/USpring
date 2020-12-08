@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#  install_basic.pl
+#  git.sh
 #  USpring
 #
 #  Created by kimbomm on 2020. 12. 03...

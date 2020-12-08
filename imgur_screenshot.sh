@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#  install_<WHAT>.pl
+#  imgur_screenshot.sh
 #  USpring
 #
 #  Created by kimbomm on 2020. 12. 07...

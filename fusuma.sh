@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#  install_fusuma.pl
+#  fusuma.sh
 #  USpring
 #
 #  Created by kimbomm on 2020. 12. 03...
