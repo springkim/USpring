@@ -8,7 +8,7 @@
 sudo apt-get install gdebi -y
 sudo add-apt-repository ppa:numix/ppa -y
 sudo add-apt-repository ppa:papirus/papirus -y
-sudo apt-add-repository ppa:tista/adapta
+sudo apt-add-repository ppa:tista/adapta -y
 sudo apt-get update
 
 
