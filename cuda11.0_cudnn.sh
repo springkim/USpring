@@ -21,7 +21,7 @@ sudo apt-get -y install cuda
 echo "export PATH=/usr/local/cuda-11.0/bin:\$PATH" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64:\$LD_LIBRARY_PATH" >> ~/.bashrc
 
-wget -O /tmp/cudnn.tgz
+wget "https://github.com/springkim/USpring/releases/download/cudnn/cudnn-11.0-linux-x64-v8.0.5.39.tgz" -O /tmp/cudnn.tgz
 tar xvzf /tmp/cudnn.tgz -C /tmp
 sudo cp -P tmp/cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp -P tmp/cuda/lib64/libcudnn* /usr/local/cuda/lib64
