@@ -7,8 +7,8 @@
 #
 
 
-cuda_repo_url = 'http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb'
-cudnn_repo_url ='https://github.com/springkim/USpring/releases/download/cudnn/cudnn-11.0-linux-x64-v8.0.5.39.tgz'
+cuda_repo_url="http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda-repo-ubuntu2004-11-0-local_11.0.2-450.51.05-1_amd64.deb"
+cudnn_repo_url="https://github.com/springkim/USpring/releases/download/cudnn/cudnn-11.0-linux-x64-v8.0.5.39.tgz"
 
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
 sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
