@@ -8,3 +8,4 @@
 git clone https://github.com/dylanaraps/neofetch
 cd neofetch
 sudo make install
+rm -rf neofetch
